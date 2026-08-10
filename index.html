@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#264a40" />
+    <meta name="description" content="A private, offline-first fishing log." />
+    <link rel="manifest" href="/oev-expanse/fishing-log/manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>Ctrl+Cast Log</title>
+    <script type="module" crossorigin src="/oev-expanse/fishing-log/assets/index-Db1ZwzJJ.js"></script>
+    <link rel="stylesheet" crossorigin href="/oev-expanse/fishing-log/assets/index-Dn5MZvpL.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="site-header">
+        <a class="wordmark" href="/" aria-label="Ctrl+Cast Log home">Ctrl+<em>Cast</em> Log</a>
+        <button class="text-button" id="backup-button" type="button">Backup</button>
+      </header>
+
+      <section class="hero" aria-labelledby="today-heading">
+        <p class="eyebrow" id="today-date"></p>
+        <h1 id="today-heading">Keep the <em>ones</em><br />you want to remember.</h1>
+        <p class="hero-copy">A private field log for the quiet details that make a good day repeatable.</p>
+        <button class="log-button" id="open-log" type="button">Log a catch <span aria-hidden="true">↗</span></button>
+      </section>
+
+      <section class="dashboard" aria-label="Your fishing log">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Recent water</p>
+            <h2>Your last marks</h2>
+          </div>
+          <span class="catch-count" id="catch-count">0 catches</span>
+        </div>
+        <div class="catch-list" id="catch-list"></div>
+      </section>
+    </main>
+
+    <dialog class="catch-dialog" id="catch-dialog" aria-labelledby="log-heading">
+      <form id="catch-form">
+        <div class="dialog-topbar">
+          <button class="close-button" id="close-log" type="button" aria-label="Close catch log">×</button>
+          <p class="eyebrow">New mark</p>
+          <span aria-hidden="true"></span>
+        </div>
+        <div class="form-heading">
+          <h2 id="log-heading">What <em>found</em><br />the line?</h2>
+          <p>Start with the catch. The conditions can follow.</p>
+        </div>
+
+        <fieldset class="form-section catch-essentials">
+          <label>
+            <span>Species <b aria-hidden="true">*</b></span>
+            <input name="species" autocomplete="off" placeholder="e.g. Smallmouth bass" required />
+          </label>
+          <div class="measurement-row">
+            <label>
+              <span>Length</span>
+              <div class="unit-input"><input name="length" inputmode="decimal" type="number" min="0" step="0.1" placeholder="—" /><em>in</em></div>
+            </label>
+            <label>
+              <span>Weight</span>
+              <div class="unit-input"><input name="weight" inputmode="decimal" type="number" min="0" step="0.1" placeholder="—" /><em>lb</em></div>
+            </label>
+          </div>
+          <label>
+            <span>Photo</span>
+            <input class="photo-input" name="photo" type="file" accept="image/*" capture="environment" />
+          </label>
+        </fieldset>
+
+        <button class="details-toggle" id="details-toggle" type="button" aria-expanded="false">Add conditions <span aria-hidden="true">+</span></button>
+        <fieldset class="form-section detail-fields" id="detail-fields" hidden>
+          <label><span>Where</span><input name="location" autocomplete="off" placeholder="Lake, river, or favorite spot" /></label>
+          <label><span>Lure / bait</span><input name="lure" autocomplete="off" placeholder="What did they want?" /></label>
+          <div class="measurement-row">
+            <label><span>Depth</span><div class="unit-input"><input name="depth" inputmode="decimal" type="number" min="0" step="0.1" placeholder="—" /><em>ft</em></div></label>
+            <label><span>Water</span><input name="water" autocomplete="off" placeholder="Clear, stained…" /></label>
+          </div>
+          <label><span>Weather</span><input name="weather" autocomplete="off" placeholder="Cloudy, calm, 68°…" /></label>
+          <label><span>Notes</span><textarea name="notes" rows="3" placeholder="The little thing worth keeping…"></textarea></label>
+        </fieldset>
+        <input name="caughtAt" type="hidden" />
+        <p class="form-error" id="form-error" role="alert" hidden></p>
+        <button class="save-button" type="submit">Save this catch</button>
+      </form>
+    </dialog>
+
+    <dialog class="backup-dialog" id="backup-dialog" aria-labelledby="backup-heading">
+      <div class="dialog-topbar">
+        <button class="close-button" id="close-backup" type="button" aria-label="Close backup">×</button>
+        <p class="eyebrow">Your data</p><span aria-hidden="true"></span>
+      </div>
+      <div class="form-heading">
+        <h2 id="backup-heading">Keep a<br /><em>spare</em> map.</h2>
+        <p>Your log is stored only on this device. Save a copy before switching phones or clearing browser data.</p>
+      </div>
+      <div class="backup-actions">
+        <button class="save-button" id="export-button" type="button">Export catch log</button>
+        <label class="import-button">Import catch log<input id="import-input" type="file" accept="application/json" /></label>
+      </div>
+      <p class="form-error" id="backup-error" role="alert" hidden></p>
+    </dialog>
+  </body>
+</html>

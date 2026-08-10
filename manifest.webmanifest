@@ -1,0 +1,9 @@
+{
+  "name": "Ctrl+Cast Log",
+  "short_name": "Cast Log",
+  "description": "A private, offline-first fishing log.",
+  "display": "standalone",
+  "start_url": "/",
+  "background_color": "#f7f3e7",
+  "theme_color": "#264a40"
+}
