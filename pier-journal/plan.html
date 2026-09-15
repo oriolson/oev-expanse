@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Pier Journal | Product &amp; build plan</title>
+  <style>
+    :root { --paper:#f5f3ec; --ink:#23362e; --green:#234a3c; --muted:#58695f; --line:#ccd2c8; --tint:#e8ece3; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    a { color:var(--green); text-underline-offset:4px; }
+    a:hover { text-decoration-thickness:2px; }
+    :focus-visible { outline:3px solid #947023; outline-offset:5px; }
+    header,main,footer { width:min(1120px,calc(100% - 64px)); margin-inline:auto; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:28px 0; border-bottom:1px solid var(--line); }
+    .brand { font:700 22px Georgia,serif; text-decoration:none; }
+    .nav-link { display:inline-flex; min-height:44px; align-items:center; font-size:14px; }
+    .hero { padding:76px 0 60px; max-width:850px; }
+    .eyebrow { margin:0 0 15px; color:var(--green); font-size:12px; font-weight:700; letter-spacing:.13em; text-transform:uppercase; }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { margin-bottom:24px; font:400 clamp(44px,6.5vw,76px)/1.04 Georgia,serif; letter-spacing:-.04em; }
+    .lede { max-width:720px; font-size:21px; line-height:1.55; color:var(--muted); }
+    .status { display:inline-block; padding:6px 12px; background:var(--tint); font-size:13px; }
+    .layout { display:grid; grid-template-columns:210px minmax(0,1fr); gap:65px; align-items:start; }
+    aside { position:sticky; top:24px; padding-bottom:32px; }
+    aside a { display:flex; min-height:44px; align-items:center; text-decoration:none; font-size:14px; }
+    aside p { font-size:12px; color:var(--muted); margin-top:26px; }
+    section { scroll-margin-top:28px; border-top:1px solid var(--line); padding:32px 0 42px; }
+    h2 { font:400 32px/1.15 Georgia,serif; letter-spacing:-.025em; margin-bottom:22px; }
+    h3 { font-size:18px; margin:26px 0 8px; }
+    ul,ol { padding-left:22px; margin:12px 0 20px; }
+    li { padding:3px 0 3px 3px; }
+    strong { font-weight:650; }
+    .muted,small { color:var(--muted); }
+    .note { background:var(--tint); padding:20px 24px; margin:26px 0 0; }
+    .note p:last-child { margin-bottom:0; }
+    .step { display:grid; grid-template-columns:38px 1fr; gap:16px; margin:26px 0; }
+    .step-number { color:var(--green); font:24px Georgia,serif; }
+    .step h3 { margin-top:0; }
+    .step p { margin-bottom:8px; }
+    .tag { font-size:11px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--green); }
+    dl { margin:0; }
+    dt { font-weight:650; margin-top:24px; }
+    dd { margin:4px 0 0; color:var(--muted); }
+    code { font-size:.86em; overflow-wrap:anywhere; }
+    .files { padding:22px; border:1px solid var(--line); line-height:1.8; overflow-wrap:anywhere; }
+    .files p:last-child { margin-bottom:0; }
+    .table-scroll { overflow-x:auto; margin:24px 0; }
+    table { width:100%; min-width:620px; border-collapse:collapse; font-size:14px; line-height:1.5; }
+    caption { text-align:left; color:var(--muted); margin-bottom:14px; }
+    th,td { text-align:left; vertical-align:top; border-bottom:1px solid var(--line); padding:14px 12px 14px 0; }
+    th { font-size:12px; color:var(--green); }
+    details { border-bottom:1px solid var(--line); padding:13px 0; }
+    summary { min-height:44px; cursor:pointer; font-weight:600; padding:8px 0; }
+    details p { margin:8px 0 18px; color:var(--muted); }
+    footer { margin-top:38px; padding:24px 0 36px; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
+    @media(max-width:760px) {
+      header,main,footer { width:calc(100% - 36px); }
+      .hero { padding:46px 0 34px; }
+      .layout { display:block; }
+      aside { position:static; display:flex; flex-wrap:wrap; gap:0 22px; padding:0 0 22px; }
+      aside p { width:100%; margin:8px 0 0; }
+      .lede { font-size:19px; }
+      h2 { font-size:29px; }
+    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+    @media print { aside,header .nav-link { display:none; } .layout { display:block; } header,main,footer { width:100%; } body { font-size:11pt; } .hero { padding:25px 0; } section { break-inside:avoid; } details { display:block; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">Pier Journal</a>
+    <a class="nav-link" href="index.html">Open interactive wireframe &rarr;</a>
+  </header>
+  <main>
+    <div class="hero">
+      <p class="eyebrow">NYC &amp; Brooklyn / iOS 26+ / Working name</p>
+      <h1>A little less guessing.<br>A record of your fishing.</h1>
+      <p class="lede">A simple, private native app for the piers you return to, the fish you catch, and the conditions around you. Start a catch with its photo, or skip straight to a quick log. Add live conditions once the foundation works.</p>
+      <span class="status">Photo-first wireframe ready. Optional AI assistance planned for later. No Swift app has been built.</span>
+    </div>
+    <div class="layout">
+      <aside aria-label="Plan contents">
+        <a href="#scope">01 &nbsp; Scope</a>
+        <a href="#experience">02 &nbsp; Experience</a>
+        <a href="#increments">03 &nbsp; Build increments</a>
+        <a href="#photo-assistance">Later &nbsp; AI photo assistance</a>
+        <a href="#native">04 &nbsp; Native approach</a>
+        <a href="#conditions">05 &nbsp; Weather &amp; tides</a>
+        <a href="#quality">06 &nbsp; Definition of done</a>
+        <a href="#handoff">07 &nbsp; Files &amp; next checkpoint</a>
+        <p>Confirmed scope is separated from proposed implementation decisions below.</p>
+      </aside>
+      <div>
+        <section id="scope">
+          <p class="eyebrow">01 / The brief</p>
+          <h2>Your journal, not another fishing feed.</h2>
+          <h3>Confirmed with you</h3>
+          <ul>
+            <li>Native Swift app for iOS 26 and later.</li>
+            <li>Saltwater and pier fishing in New York City and Brooklyn.</li>
+            <li>Log fish, save and revisit spots, see weather, and see tide conditions.</li>
+            <li>Private, on-device journal. No account, social features, or app-managed cloud sync.</li>
+            <li>Photos are most important when logging a catch: new catches open camera-first, with Choose from Photos and Skip photo alternatives, and photo review before details. Photos stay optional so quick logs are never blocked.</li>
+            <li>First usable milestone: phase 1a photo-first catches plus phase 1b manually saved spots. Live weather and tides follow in phase 2; export/restore follows in phase 3.</li>
+            <li>Two tabs: Journal and Spots. Opening a spot leads with its conditions, not a separate Conditions destination.</li>
+            <li>Explore Weather-style paging: Spots opens the last-viewed pier; swipe between saved spots and use All spots for the list/map.</li>
+            <li>Refactor the HTML around native iOS layouts and capability flows, with explicit phase labels. No native app implementation in this pass.</li>
+            <li>Plan and HTML wireframe before writing any native app code.</li>
+            <li>Keep a later AI photo-assistance idea in the plan: suggest species and useful fish information where it saves work, but use native APIs and ordinary logic for data such as location.</li>
+          </ul>
+          <h3>Proposed boundaries</h3>
+          <p>Start iPhone-first, with an adaptive layout rather than a separate iPad experience. No backend, subscriptions, community spot discovery, fishing scores, automatic trip tracking, regulations database, or catch-identification AI in the first milestone. <a href="#photo-assistance">Optional photo assistance</a> is a later exploration, not a dependency for capture or saving a catch.</p>
+          <p>Photo capture, review, optional import, and durable app-owned photos are core phase 1a work, not a later enhancement. Export/restore and richer historical analysis remain follow-ups. A saved spot records your location and notes; it is not a claim that fishing is permitted or access is open.</p>
+          <div class="note"><strong>Local does not mean backed up.</strong> There is no cross-device sync. Device backups may include app data depending on your settings; the app cannot guarantee that. Show a plain-language warning before you rely on it as your only record.</div>
+        </section>
+        <section id="experience">
+          <p class="eyebrow">02 / Product shape</p>
+          <h2>Pick a spot. Know the conditions.</h2>
+          <dl>
+            <dt>Journal</dt>
+            <dd>A reverse-chronological catch list. Every primary new-catch action opens capture first, with Choose from Photos and Skip photo always available. Review the candidate photo before details; Use photo accepts it into the draft, not a saved catch. Put the optional photo field at the top of details. Species and date/time remain required; date defaults to now and logging from a spot prefills that spot. Spot, length, bait, and notes remain optional. The baseline does not infer species or fabricate photo metadata; later AI suggestions require confirmation. Logging never requires a photo or creating a spot first.</dd>
+            <dt>Spots</dt>
+            <dd>Open directly to the last-viewed pier, or the first saved spot if you have not viewed one yet. Swipe horizontally between spots, like locations in Weather. Each page leads with weather and tides; scroll vertically for personal notes and linked catches. All spots opens the list/map for jumping to a place or adding a new one.</dd>
+            <dt>Conditions inside each spot <span class="tag">Live data in phase 2</span></dt>
+            <dd>Weather and tides belong to the spot you opened. No separate tab, no second location picker, and no detour through a generic conditions page. Always show the spot name, tide station, timezone, and data source. Keep the native app to Journal and Spots even after live conditions arrive.</dd>
+          </dl>
+          <div class="note">
+            <p><strong>Current exploration: one pier per page.</strong> Page dots and previous/next controls make the swipe discoverable and provide alternatives to gestures. For more than three spots, use a compact position count rather than crowding the preview with dots. Paging stops at either end instead of wrapping.</p>
+            <p>One saved spot needs no paging controls. No spots opens the save-your-first-spot state. Deleting the current spot moves to its next neighbor, or the previous one at the end. Catch actions always belong to the spot where you started them.</p>
+            <p>The HTML remembers the last-viewed spot separately in Sample and First-use views, until reload. The native app should persist a validated spot ID locally. Swiping should not erase a page's vertical scroll position or interfere with reading notes.</p>
+          </div>
+          <h3>Small, complete flows</h3>
+          <ol>
+            <li>First launch &rarr; empty Journal &rarr; new catch &rarr; camera-first capture &rarr; photo review &rarr; Use photo &rarr; details &rarr; Save &rarr; see the catch in the list. Capture alone never creates a catch.</li>
+            <li>Capture &rarr; Choose from Photos &rarr; select an image &rarr; review &rarr; Use photo &rarr; details; or Skip photo &rarr; details for a quick log. Denied or unavailable camera access keeps both alternatives available.</li>
+            <li>Review &rarr; Retake or Choose different &rarr; discard only the candidate, not an existing draft or saved photo. Cancel a new catch with a pending photo or changed data &rarr; confirm discard or keep editing.</li>
+            <li>Spots &rarr; last-viewed pier &rarr; swipe to another pier &rarr; see its conditions and catches.</li>
+            <li>All spots &rarr; add a pin and name &rarr; save &rarr; open the new spot's page.</li>
+            <li>All spots &rarr; choose a pier from list/map &rarr; swipe from there or scroll down for notes and catches.</li>
+            <li>Spot detail &rarr; log a catch &rarr; capture first with the originating spot retained &rarr; review or skip &rarr; details with date now and spot prefilled &rarr; Save &rarr; return to that spot and see the linked catch.</li>
+            <li>Catch detail &rarr; edit opens details directly, never forces camera &rarr; optionally replace or Remove the top photo field &rarr; Save. Canceling replacement preserves the old draft/saved image; only Remove explicitly clears the photo. Canceling edits preserves the saved catch. Delete requires explicit confirmation.</li>
+            <li>Spot detail &rarr; choose a supported tide station if needed &rarr; see clearly attributed tides without changing the spot.</li>
+          </ol>
+          <p class="muted">The wireframe previews phase-2 conditions inside spot details using synthetic examples. The first native milestone shows real local spot information and catches, without fake forecasts or a dead conditions panel. Live conditions will be inserted at the top of that same screen later. The map remains an illustration.</p>
+        </section>
+        <section id="increments">
+          <p class="eyebrow">03 / Incremental delivery</p>
+          <h2>Finish a slice. Use it. Then build more.</h2>
+          <div class="step">
+            <div class="step-number">0</div>
+            <div><h3>Plan &amp; wireframe <span class="tag">Current</span></h3>
+              <p>Explore two-tab navigation with swipeable spot pages, All spots, grouped forms, native-style editing sheets, first-use states, and conditions-first details in HTML. Refactor new catches to phase-1a camera-first capture, photo review, and top-of-form optional photos. Include simulated camera authorization, phase-1b map/location flows, and a screen-specific native handoff. Use original fish illustration fixtures only: no actual camera or browser camera, location, photo-library, or file access.</p>
+              <p class="muted">Exit: approve the plan and the first native slice. Nothing in this checkpoint authorizes building the whole app at once.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">1a</div>
+            <div><h3>A photo-first persistent catch journal</h3>
+              <p>After an explicit native start request, create the SwiftUI iOS 26 project and versioned SwiftData store with one nullable app-owned photo file reference from day one. Include empty Journal, camera-first new catch, Choose from Photos, Skip photo, review before details, detail/edit, confirmed delete, and durable image storage. Species/date remain required; all other fields, including photo, are optional.</p>
+              <p>Deliver internal slices for capture and permissions, candidate review, the catch form and Save transaction, then durable photos and cleanup. These are reviewable steps within 1a, not a reduced first milestone. Do not auto-save a catch on capture or Use photo.</p>
+              <p class="muted">Exit: create catches with and without photos, edit without forcing capture, verify permission and failure fallbacks, terminate and relaunch with data and photos intact. Review Simulator fallbacks and still capture on a camera-equipped device before continuing. The first usable milestone remains 1a + 1b.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">1b</div>
+            <div><h3>Your saved spots <span class="tag">1a + 1b = first usable milestone</span></h3>
+              <p>Add MapKit, the All spots map/list, manually saved pins, spot pages with notes and linked catches, edit/delete, and optional links from catches. If this exploration is approved, add native horizontal paging with last-viewed spot restoration. Keep Journal and Spots as the only tabs. A saved spot works without location permission. Keep a catch's last recorded spot name if that spot is deleted.</p>
+              <p class="muted">Exit: complete the journal and spot flows offline, except online map imagery. Review the first usable app before adding any live provider.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2a</div>
+            <div><h3>Weather at your spot</h3>
+              <p>Enable WeatherKit after confirming developer membership and capabilities. Add weather at the top of each spot detail: temperature, wind/direction/gusts, precipitation, and a compact hourly forecast. The opened spot supplies the coordinates; do not add another location picker or tab. Include attribution and independent loading, error, retry, and cached states.</p>
+              <p class="muted">Exit: tapping a spot opens weather for that spot directly; old requests cannot overwrite a different spot's screen. Missing data is never displayed as zero or clear weather.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2b</div>
+            <div><h3>Tides with the right context</h3>
+              <p>Add NOAA tide predictions below the weather in the same spot detail, with a per-spot station choice, high/low times and heights, and a curve only where the station supports interval predictions. Check station suitability for each NYC waterway, not just straight-line distance.</p>
+              <p class="muted">Exit: station, datum, timezone, prediction period, and fetched time are visible; midnight, DST, provider failure, and unsupported-station cases work correctly.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div><h3>Keep it useful over time</h3>
+              <p>Versioned export and restoration of the journal, including the optional app-owned photos already delivered in phase 1a. Validate restoration before promising backup; camera capture and PhotosPicker import are not deferred to this phase.</p>
+              <p class="muted">Exit: data round-trips without loss. Prioritize export before using experimental schema upgrades on a real journal. Accessibility and error handling are required in every slice, not postponed to this phase.</p>
+            </div>
+          </div>
+        </section>
+        <section id="photo-assistance">
+          <p class="eyebrow">Later / Optional exploration, not implemented</p>
+          <h2>Let the photo help. Keep the angler in control.</h2>
+          <p>After the manual photo-first journal works, explore assistance that reduces typing and helps identify an unfamiliar fish. Start with a small species-suggestion feature, not a general-purpose chatbot. This note does not change the current wireframe or authorize model integration, photo uploads, or new dependencies.</p>
+          <h3>Worth exploring</h3>
+          <dl>
+            <dt>Suggest a species from the accepted photo</dt>
+            <dd>Offer a likely species or a short list of plausible matches, clearly labeled as suggestions. The user can accept, correct, or ignore them. If the image is unclear, contains multiple fish, or shows an unfamiliar species, ask for a clearer crop or say that identification is uncertain rather than forcing a match.</dd>
+            <dt>Help the user compare a match</dt>
+            <dd>Show relevant identifying features from a vetted species guide, such as body shape, markings, or fin characteristics. After the user confirms a species, look up its common/scientific names and concise reference information from a curated source; do not generate unsourced fish facts. A suggestion is not a verified identification.</dd>
+            <dt>Make the photo more useful</dt>
+            <dd>Optional framing, crop, or blur hints could improve the capture. Try ordinary image-quality checks or a small computer-vision model before generative AI. Never block capture, saving, or a quick photo-free log to demand a better image.</dd>
+          </dl>
+          <h3>Use the right source for every field</h3>
+          <div class="table-scroll" role="region" aria-label="AI versus native data sources" tabindex="0">
+            <table>
+              <caption>AI is a possible assistant for ambiguous visual interpretation, not a replacement for known data.</caption>
+              <thead><tr><th scope="col">Field or action</th><th scope="col">Preferred source</th><th scope="col">Boundary</th></tr></thead>
+              <tbody>
+                <tr><td>Species suggestion</td><td>A suitable image model, evaluated against real fishing photos.</td><td>Provisional until the user accepts it. Allow correction and no-match results; never overwrite a manual or previously confirmed species.</td></tr>
+                <tr><td>Spot and coordinates</td><td>The selected saved spot, MapKit pin, or permitted Core Location fix.</td><td>No AI location guessing or landmark inference. Retain the existing optional-location/manual-entry flow.</td></tr>
+                <tr><td>Catch time</td><td>Device time with user correction; optionally read available photo metadata later.</td><td>Import time is not catch time. Missing, old, or conflicting metadata needs confirmation, not an AI guess.</td></tr>
+                <tr><td>Weather and tides</td><td>WeatherKit and NOAA for the selected spot, station, and time.</td><td>No generated conditions. Current weather must not masquerade as historical catch conditions.</td></tr>
+                <tr><td>Length, weight, bait, and notes</td><td>User-entered measurements and observations.</td><td>Do not infer size or weight from an uncalibrated photo, or fill in hidden bait, gear, or events. No automatic factual notes.</td></tr>
+                <tr><td>Species reference information</td><td>A curated, attributed species guide keyed to the confirmed species.</td><td>Use a lookup rather than AI when the information is already known. No edibility, safe-handling, legal-retention, or fishing-access decisions from image identification.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Proposed later interaction</h3>
+          <p>Capture or choose photo &rarr; Use photo &rarr; catch details &rarr; optional <strong>Suggest species</strong> action &rarr; review suggested matches &rarr; <strong>Use suggestion</strong> fills the editable species field &rarr; Save. Manual details and Save remain available while assistance runs. AI never commits a catch automatically.</p>
+          <p>Keep the raw suggestion and its source separate from user-confirmed fields. Bind analysis to the catch draft and exact photo revision; replacing/removing the photo invalidates unapplied results. A late result must not change another draft or overwrite something the user has already entered. Explain uncertain or unavailable results in plain language; do not display invented confidence percentages.</p>
+          <h3>Privacy and implementation decisions stay open</h3>
+          <p>Evaluate a purpose-built on-device image classifier first, for example through Vision/Core ML with a suitable trained model. Verify accuracy, image-input support, device coverage, and model size; do not assume an included Apple language model can identify fish from photographs. No model, vendor, or accuracy claim is selected here.</p>
+          <p>A cloud image service would be a separately approved exception to the on-device-only design, not a silent fallback. Explain the destination, cost, retention, and exact data sent, and get explicit consent before any upload. Minimize the request to the selected fish crop or reduced image, strip location/EXIF metadata, and exclude journal notes and saved-spot coordinates. Do not upload the library or reuse images for training by default. Provider credentials cannot be embedded in the app; any required backend is a new architecture decision.</p>
+          <h3>Small experiment before a feature commitment</h3>
+          <p>Once the core journal is usable, evaluate species suggestions on a consented or appropriately licensed set of NYC-area fish photos, including lookalikes, partial views, low light, multiple fish, and species outside the model's coverage. Measure corrections, false-confident results, abstentions, time/typing saved, latency, battery impact, and cost before setting a release gate. Test no-network, no-model, timeout, cancel, photo replacement, and late responses. If it is not reliably helpful, keep manual entry and skip the feature.</p>
+          <p class="muted">Sequencing: later optional experiment after the core capture/logging flow is established. It does not block phase 1, live conditions, or export/restore, and does not add AI screens to today's wireframe. Provider choice, remote processing, evaluation targets, and implementation still need explicit decisions.</p>
+        </section>
+        <section id="native">
+          <p class="eyebrow">04 / Proposed implementation</p>
+          <h2>Native tools. A small architecture.</h2>
+          <p><strong>Swift + SwiftUI + SwiftData + MapKit.</strong> Use native navigation, tab bars, sheets, forms, and SF Symbols. Let system controls adopt iOS 26 appearance; do not recreate the HTML phone frame or custom web chrome in Swift. No third-party dependencies planned.</p>
+          <p>For the paging exploration, prefer a native page-style container with stable spot-ID selection and vertically scrollable spot content. The HTML uses browser scroll snapping only to explore the interaction; confirm touch gestures, VoiceOver navigation, and scroll restoration in the native implementation rather than porting web gesture code.</p>
+          <h3>Screen-by-screen native handoff</h3>
+          <div class="table-scroll" role="region" aria-label="Native screen mapping" tabindex="0">
+            <table>
+              <caption>Map the intent to system components, not the HTML implementation. The browser is not running SwiftUI, native camera capture, MapKit, Core Location, or PhotosPicker.</caption>
+              <thead><tr><th scope="col">Surface / phase</th><th scope="col">Native primitive</th><th scope="col">Data and states to preserve</th></tr></thead>
+              <tbody>
+                <tr><td>Journal / 1a</td><td><code>NavigationStack</code>, <code>List</code>, <code>Section</code>, <code>ContentUnavailableView</code>, toolbar actions.</td><td>SwiftData catches; empty/populated/detail/edit/delete. Use system text styles, Dynamic Type, semantic colors, and symbol labels rather than fixed web typography.</td></tr>
+                <tr><td>New-catch capture / 1a</td><td>Native still capture: a simple <code>UIImagePickerController</code> with camera source via a SwiftUI <code>UIViewControllerRepresentable</code>; use AVFoundation only if required.</td><td>Camera-first entry with Choose from Photos and Skip photo. Request access only on intentional camera use. Handle authorization and device unavailability, including Simulator. No microphone permission, background capture, or app-launch permission prompt.</td></tr>
+                <tr><td>Photo review / 1a</td><td>SwiftUI review surface with Use photo, Retake, and Choose different actions.</td><td>Captured or imported image stays a pending candidate until Use photo accepts it into the draft. Retake/Choose different discards only that candidate. Canceling replacement preserves the prior draft/saved image; only Remove clears it. No catch is saved before details and explicit Save.</td></tr>
+                <tr><td>Catch editing / 1a</td><td><code>sheet</code>, <code>Form</code>, <code>TextField</code>, <code>DatePicker</code>, <code>Picker</code>, <code>TextEditor</code>; top photo field and Cancel/Save toolbar.</td><td>A separate draft captures catch ID and originating spot ID. New catches reach details after review or Skip; existing edits start directly at details. Species/date validation stays unchanged, date defaults to now for new catches, and spot is prefilled when known. Save validates then commits; cancel/dismissal confirms discarding pending photos or changed data. Subflows preserve the parent draft.</td></tr>
+                <tr><td>Spots / 1b</td><td>Top-level <code>TabView</code>, native page-style browsing with stable selection, <code>ScrollView</code> content, <code>NavigationStack</code> for All spots, menu/actions for editing.</td><td>Local spots and last-viewed ID. Zero/one/many, list/map selection, resize, deletion, focus and scroll restoration. Log catch from the current spot without another selection step.</td></tr>
+                <tr><td>Spot editing and pin selection / 1b</td><td><code>Form</code>, <code>Map(position:)</code>, <code>MapReader</code>, markers/annotations, coordinate conversion and a confirm-location action.</td><td>A location draft, not an immediately saved pin. Confirm, adjust, cancel, manual coordinates, offline map unavailable. The HTML uses explicitly sample positions on a schematic map, not real geographic hit-testing.</td></tr>
+                <tr><td>Current-location shortcut / 1b</td><td>Core Location authorization and a one-shot location request. No background location or Always-access request.</td><td>Permission status, service availability, accuracy and request errors. The HTML simulates outcomes without reading your location or opening system settings.</td></tr>
+                <tr><td>Conditions / 2</td><td>WeatherKit, URLSession/NOAA, semantic measurement formatting; Swift Charts where the station supports interval predictions.</td><td>Spot-scoped provider responses, station/datum/timezone, loading/partial/error/cached states, required attribution. Never replace unavailable data with the wireframe's synthetic fixtures.</td></tr>
+                <tr><td>Optional photo import and storage / 1a</td><td><code>PhotosPicker</code>, transferable image loading, bounded image processing, app-owned image files, and a nullable file reference in SwiftData.</td><td>No full-library authorization needed for selection. Handle cancellation, loading/processing/write failure, review, replacement/removal, and cleanup. Attach the file reference only on catch Save. HTML uses original fish illustrations only, without actual device, library, or file access.</td></tr>
+                <tr><td>Export/restore / 3</td><td>Versioned archive and validated restore of records and their app-owned files.</td><td>Round-trip existing optional photos along with IDs, timestamps, associations, and units. Do not introduce photo capture only at this phase.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Permission behavior, not a pretend system prompt</h3>
+          <p>Camera and location flows are visibly marked as HTML review simulations. First camera use offers simulated Allow/Deny; after denial, future calls go directly to sticky Settings guidance plus Choose from Photos and Skip photo, never another permission prompt. Keep camera permission state separate per Sample/First-use mode, with an exterior reviewer reset for each mode. The location simulation fills a sample position on Allow and retains manual pin/coordinates on Deny. Reviewer resets are not in-app ways to bypass iOS permissions and do not open real Settings.</p>
+          <dl>
+            <dt>Native location authorization states / phase 1b</dt>
+            <dd><code>notDetermined</code>: request When In Use only after the shortcut is tapped. <code>authorizedWhenInUse</code> or an existing <code>authorizedAlways</code>: request a location. <code>denied</code>: explain and optionally link to app Settings, without re-prompting. <code>restricted</code>: explain that access cannot be granted here and keep manual selection. Also handle system location services being off.</dd>
+            <dt>Accuracy and failure are separate</dt>
+            <dd>Reduced accuracy is not an authorization status. Accept approximate location as a starting area and let the user place the pier pin; do not silently treat it as an exact fishing spot. Handle timeout, unavailable location, and revoked permission. Add <code>NSLocationWhenInUseUsageDescription</code> before requesting authorization. The browser grant/deny demo does not exercise all of these OS states.</dd>
+            <dt>Native camera authorization and availability / phase 1a</dt>
+            <dd>Add <code>NSCameraUsageDescription</code>. On intentional camera use, <code>.notDetermined</code> requests access; <code>.authorized</code> opens still capture when available; <code>.denied</code> shows persistent guidance to app Settings without re-prompting; <code>.restricted</code> explains the limitation rather than promising Settings can fix it. Check camera availability, including Simulator and devices without a usable camera; offer PhotosPicker and Skip photo for every blocked state. Recheck authorization after returning from Settings. Never request on app launch, request microphone permission for still photos, or capture in the background.</dd>
+            <dt>Photo selection is not full-library access / phase 1a</dt>
+            <dd>PhotosPicker selection does not require full Photos-library authorization. Use it independently of camera permission. A selected image needs asynchronous loading, bounded decoding/resizing and encoding, error reporting, candidate review, and a durable app-owned copy before the catch Save commits its reference. Loading, processing, or write errors preserve the draft and any previous photo, with retry/change/skip options. The HTML's illustration picker is a flow diagram, not a custom picker to recreate in Swift.</dd>
+          </dl>
+          <h3>Prototype versus platform</h3>
+          <p>Keep phase badges inside the phone: capture/review/photos 1a, map/location 1b, and weather/tides 2. The wireframe uses original fish illustration fixtures and in-memory state only, with no actual camera/browser camera, location, photo-library, or file access. Screenshots must not imply working providers or device access. Put longer integration notes and per-mode permission resets in the exterior handoff/review panel. Native safe areas, keyboard avoidance, VoiceOver rotor behavior, haptics, system sheet gestures, and iOS 26 materials still need device/simulator review. Let the OS render its controls rather than imitating Liquid Glass with custom production views.</p>
+          <p class="muted">Platform references: <a href="https://developer.apple.com/documentation/corelocation/requesting-authorization-to-use-location-services">Apple's location authorization guidance</a>, <a href="https://developer.apple.com/documentation/photokit/selecting-photos-and-videos-in-ios">Photos picker privacy and selection</a>, and <a href="https://developer.apple.com/design/human-interface-guidelines/maps">Maps in the Human Interface Guidelines</a>.</p>
+          <dl>
+            <dt>CatchRecord</dt>
+            <dd>Stable UUID, species text, caught-at Date, recorded timezone identifier, optional canonical length measurement, bait, notes, optional Spot relationship, spot-name snapshot, and one nullable app-owned photo file reference from the first versioned schema. Never store only a Photos asset reference or an inline image blob. Historical conditions snapshots and separate AI-suggestion provenance remain later proposals; the baseline does not infer species or fabricate capture metadata.</dd>
+            <dt>Spot</dt>
+            <dd>Stable UUID, name, latitude, longitude, notes, created/updated timestamps. A station preference is added in the tides increment. Validate finite coordinate ranges and trim required names. Editing a spot does not rewrite historical catch spot-name snapshots; newly logged catches use the new name.</dd>
+            <dt>Persistence</dt>
+            <dd>VersionedSchema from the first store; explicit migration paths and migration fixtures when it changes. No silent store resets on failure. Catch-to-spot deletion uses nullification, not cascading catch deletion. Surface save errors and preserve form contents.</dd>
+            <dt>Photo ownership and draft lifecycle / phase 1a</dt>
+            <dd>Stage candidates separately from both the accepted draft photo and the saved record. Use photo accepts a candidate into the draft only; attach a durable app-owned file reference to the catch only on Save after successful bounded processing and file writing. If the record commit fails, retain a retryable draft and prior saved image rather than a broken reference. Cancel, Retake, Choose different, replacement, Remove, and catch deletion clean up only unreferenced app-owned files: never delete the user's original Photos asset. Retain an existing saved file until a replacement/removal Save succeeds, and an existing draft image when its replacement subflow is canceled. Confirm discard for new-catch cancellation with a pending candidate or changed data. Reconcile orphaned staging files safely after interrupted work, without deleting referenced images.</dd>
+            <dt>Measurements &amp; time</dt>
+            <dd>Proposed NYC defaults: inches for fish, Fahrenheit for temperature, mph for weather wind, feet relative to MLLW for tide heights. Persist unambiguous values and units; convert at the boundary. Store dates as instants, display timezone labels where relevant.</dd>
+            <dt>Network boundary</dt>
+            <dd>Small async weather/tide service interfaces with deterministic fixtures for previews and tests. URLSession for NOAA; native WeatherKit for Apple weather. Keep provider models separate from journal persistence. Cancel obsolete requests and key cached responses by location/station and requested period.</dd>
+            <dt>Privacy &amp; permissions</dt>
+            <dd>No login, analytics, backend, or CloudKit. Request camera permission only for intentional still capture; never automatically save captures to the user's Photos library. PhotosPicker and Skip photo remain available without camera access. Request location only after a user chooses the current-location shortcut; manual pins still work if access is denied. Weather requests disclose selected coordinates to Apple, while NOAA receives station/time-range queries. Catch details, photos, and private notes are never sent to these providers.</dd>
+          </dl>
+          <h3>Proposed future source layout</h3>
+          <p><code>pier-journal/ios/</code> will contain the Xcode project after approval, organized by <code>App</code>, <code>Models</code>, <code>Features/Journal</code>, and later <code>Features/Spots</code>, its embedded conditions views, <code>Services</code>, and tests. Create modules only when the relevant slice needs them.</p>
+        </section>
+        <section id="conditions">
+          <p class="eyebrow">05 / Data that earns trust</p>
+          <h2>Conditions, not fishing promises.</h2>
+          <h3>Weather: Apple WeatherKit</h3>
+          <p>The native Swift API is the proposed default. Access requires Apple Developer Program membership and WeatherKit configuration for the app identifier and Xcode target. Confirm access before starting slice 2a; do not introduce a fallback provider silently.</p>
+          <p>Show the required Apple Weather mark and legal attribution link using provider-supplied attribution. If weather alerts are included later, preserve the issuing agency and required alert-detail links. The HTML reserves space for attribution but does not fetch WeatherKit data.</p>
+          <h3>Tides: NOAA CO-OPS</h3>
+          <p>Use <code>product=predictions</code>, <code>datum=MLLW</code>, <code>units=english</code>, <code>time_zone=gmt</code>, and <code>format=json</code>. Parse UTC timestamps and display them in <code>America/New_York</code>. Request a range covering the full NYC day plus the next event; do not treat a UTC calendar day as the NYC calendar day.</p>
+          <p>Use <code>interval=hilo</code> for high/low events. For harmonic stations, request interval predictions separately if a curve is needed. Subordinate stations support high/low predictions only: show an event table rather than inventing a continuous curve.</p>
+          <p>Verify a small NYC station catalog and each station's products through NOAA metadata during implementation. The Battery (<code>8518750</code>) is an example, <strong>not a universal station for every Brooklyn pier</strong>. Propose choices using waterway context, show station name and distance, and require a per-spot choice when suitability is unclear.</p>
+          <div class="note">
+            <p><strong>Tide height is not current speed or direction.</strong> Do not label a rising tide as a verified incoming current. Astronomical predictions do not account for all weather effects or observed water levels.</p>
+            <p>No "safe to fish" badge, legal-size judgment, guaranteed bite window, or access recommendation. This is a journal and conditions reference, not navigation or safety guidance.</p>
+          </div>
+          <h3>Offline and partial data</h3>
+          <p>Catches and saved spot metadata remain usable offline. Map tiles and live conditions require connectivity and are not promised offline. Weather and tides load independently: one failed provider must not hide the other's result.</p>
+          <p>Cached weather must show its fetched/valid times and an explicit cached or stale label; a prior forecast is not current weather. Tide predictions are labeled by the station and covered dates, and hidden outside the requested period. No cache means an honest unavailable state with retry, not sample values.</p>
+          <h3>Official references</h3>
+          <ul>
+            <li><a href="https://developer.apple.com/weatherkit/">Apple WeatherKit: requirements and attribution</a></li>
+            <li><a href="https://api.tidesandcurrents.noaa.gov/api/prod/">NOAA CO-OPS: products, datum, intervals, and timezones</a></li>
+            <li><a href="https://api.tidesandcurrents.noaa.gov/mdapi/prod/">NOAA station metadata API</a></li>
+          </ul>
+        </section>
+        <section id="quality">
+          <p class="eyebrow">06 / Acceptance criteria</p>
+          <h2>Small does not mean fragile.</h2>
+          <details open>
+            <summary>Every native increment</summary>
+            <p>Build and run on an iOS 26+ simulator. Exercise the changed flow and its failure path. Use Dynamic Type, VoiceOver labels, meaningful focus order, 44-point targets, sufficient contrast, and no color-only status. Test light/dark mode and reduced motion. Do not ship demonstration records as the user's real data.</p>
+          </details>
+          <details open>
+            <summary>Journal and spots</summary>
+            <p>Validate required fields, optional positive finite length, and coordinate bounds. Allow free-text species without making legal claims. Cancel must not create a record; repeated saves must not duplicate it. Dirty forms require an explicit discard decision. Entering and canceling a map, permission, or photo subflow must retain the parent draft. Relaunch preserves native edits. Permission denial does not block manual entry. Deleting a spot retains its catches and their recorded spot labels. All spots returns to the list/map, and logging from a spot retains that spot context. Test long names, empty lists, and persistence failures without losing drafts.</p>
+            <p>For paging, test horizontal swipes versus vertical scrolling, switching tabs and returning to the same spot, direct list selection, rotation/resize alignment, reduced motion, keyboard alternatives, offscreen focus, and zero/one/many spots. Deleting the active spot must select a valid neighbor, not another record's stale page index. Opening a catch form captures the spot ID before the user edits anything.</p>
+          </details>
+          <details>
+            <summary>Conditions</summary>
+            <p>Opening a spot must lead directly to its conditions, with no second spot selection. Use fixtures for complete, partial, empty, failed, and malformed provider responses. Test station switching, rapid navigation between spots, deleting the open spot, no saved spots, no station, cached data, timezone differences, DST transitions, and the next tide crossing midnight. Verify displayed units and source attribution. Match high/low events to provider data rather than estimating them from a decorative curve.</p>
+          </details>
+          <details>
+            <summary>Photo-first catches / phase 1a</summary>
+            <p>Verify every primary new-catch entry starts capture first, including from a spot; Choose from Photos and Skip photo must never block a quick log. Capture/import leads to review before details; Use photo changes only the draft. Retake/Choose different discards only the candidate. Pending/changed new catches require discard confirmation on cancellation. Existing-catch editing starts details with the photo field at the top; canceling replacement preserves the prior draft/saved image and only Remove clears it. No catch exists until explicit Save; species/date remain required, new date defaults to now, originating spot stays prefilled, and no species or metadata is fabricated.</p>
+            <p>Native tests cover .notDetermined, .authorized, .denied, .restricted, revoked permission, Settings return, and unavailable camera including Simulator; verify real still capture on a supported device. No app-launch prompt, microphone permission, or background capture. Test PhotosPicker independent of camera authorization, cancellation, failed/unsupported/oversized image loading, bounded processing, file-write and store-commit failures, retry, relaunch, and orphan cleanup. Errors retain the draft and old photo; cancel/replace/remove/delete never deletes the user's original Photos asset or a still-referenced file.</p>
+            <p>HTML acceptance is separate from native behavior: original illustration fixtures only; first-use Allow/Deny simulation; denied reuse goes straight to Settings guidance plus Photos/Skip; exterior reset and independent state per demo mode. Check capture/review/draft transitions, required validation, photo-first entry from Journal and Spots, edit cancellation, and phase labels at desktop and narrow widths, plus file:// loading. No actual camera/browser camera, location, photo-library, or file access.</p>
+          </details>
+          <details>
+            <summary>Data changes and export/restore / phase 3</summary>
+            <p>Never test destructive migration on the only copy of a real journal. Use a copy and a migration fixture; preserve all existing records on upgrade. Phase 3 export and restore should preserve IDs, timestamps, associations, units, and the optional app-owned photos already supported in phase 1a.</p>
+          </details>
+        </section>
+        <section id="handoff">
+          <p class="eyebrow">07 / The handoff</p>
+          <h2>Keep the project together.</h2>
+          <div class="files">
+            <p><a href="index.html"><code>pier-journal/index.html</code></a><br><span class="muted">Interactive design wireframe and screen-specific native handoff. Open directly in a browser; no install or build step. Keep the adjacent CSS and JavaScript files with it.</span></p>
+            <p><code>pier-journal/wireframe.css</code> &amp; <code>pier-journal/wireframe.js</code><br><span class="muted">Reusable presentation and prototype behavior. Classic scripts and local fixtures work without modules, network access, or a backend. These files are not native app source.</span></p>
+            <p><code>pier-journal/plan.html</code><br><span class="muted">This durable product and implementation plan.</span></p>
+            <p><code>pier-journal/ios/</code> <span class="tag">Future, not created</span><br><span class="muted">Native Swift app, added only after approval.</span></p>
+          </div>
+          <h3>Review status and ownership</h3>
+          <p>The photo-first HTML flow is now implemented: new catch &rarr; simulated camera or library &rarr; photo review &rarr; details &rarr; Save. Skip photo remains available, and existing-catch editing opens details directly. This supersedes the earlier deferred-photo/no-camera plan. The HTML/CSS/JS file inventory is unchanged; no native app has been created.</p>
+          <h3>Next approval checkpoint</h3>
+          <p>Camera-first new catches, alternatives, and review before details are confirmed for the HTML refactor, not authorization to write Swift. No native code until the user explicitly requests it. After reviewing the artifacts, authorize <strong>slice 1a only: the photo-first persistent catch journal</strong>, optionally reviewed as capture/review/form/durable-photo internal slices. Review 1a before saved spots, then review the first usable milestone (1a + 1b) before phase-2 live conditions. Export/restore stays phase 3.</p>
+          <p class="muted">The working name, inches/Fahrenheit defaults, and SwiftData approach remain proposed implementation decisions. Optional photos are now core phase 1a scope; earlier phase-3 photo deferral and native-camera prohibition are superseded. No Apple credentials or provider setup are needed to review these HTML files.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer>Pier Journal &middot; Private by default. Built one useful slice at a time.</footer>
+</body>
+</html>
