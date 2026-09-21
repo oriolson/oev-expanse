@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Personal site — layout directions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+  <header class="study-bar">
+    <a class="study-brand" href="index.html">Ori Olson <small>site study</small></a>
+    <nav class="dir-nav" aria-label="Directions">
+      <a href="index.html" aria-current="page">Hub</a>
+      <a href="editorial.html">A · Editorial</a>
+      <a href="archive.html">B · Archive</a>
+      <a href="split.html">C · Split</a>
+      <a href="garden.html">D · Garden</a>
+      <a href="signal.html">E · Signal</a>
+    </nav>
+  </header>
+
+  <main class="hub">
+    <section class="hub-hero" aria-labelledby="hub-title">
+      <p class="hub-eyebrow">Low-fidelity exploration</p>
+      <h1 id="hub-title">Five ways the personal site could feel.</h1>
+      <p class="hub-lede">Schematic page layouts for Home, Work, and About. Structure and hierarchy only — no final visual system yet. Pick a direction to poke around.</p>
+    </section>
+
+    <ul class="direction-grid">
+      <li>
+        <a class="direction-card" href="editorial.html">
+          <div class="thumb" aria-hidden="true">
+            <span class="thumb-label">A</span>
+            <div class="mini mini-editorial">
+              <div class="b hero-plane"></div>
+              <div class="b name"></div>
+              <div class="b line"></div>
+              <div class="b cta"></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-meta">Brand-first landing</span>
+            <h2>Editorial</h2>
+            <p>Full-bleed atmosphere plane. Name as the hero signal, one line, one CTA group. Work and about live below the fold.</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="direction-card" href="archive.html">
+          <div class="thumb" aria-hidden="true">
+            <span class="thumb-label">B</span>
+            <div class="mini mini-archive">
+              <div class="b bar"></div>
+              <div class="rows">
+                <div class="row"></div>
+                <div class="row"></div>
+                <div class="row"></div>
+                <div class="row"></div>
+                <div class="row"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-meta">Index of work</span>
+            <h2>Archive</h2>
+            <p>Sidebar identity + filterable project table. Dense, tool-like, good if the site is mostly a record of experiments.</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="direction-card" href="split.html">
+          <div class="thumb" aria-hidden="true">
+            <span class="thumb-label">C</span>
+            <div class="mini mini-split">
+              <div class="left">
+                <div class="name"></div>
+                <div class="bit"></div>
+                <div class="bit"></div>
+              </div>
+              <div class="right"></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-meta">Atelier / studio</span>
+            <h2>Split</h2>
+            <p>Fixed identity pane on the left; featured work on the right. Feels like a studio wall you keep returning to.</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="direction-card" href="garden.html">
+          <div class="thumb" aria-hidden="true">
+            <span class="thumb-label">D</span>
+            <div class="mini mini-garden">
+              <div class="col"></div>
+              <div class="col"></div>
+              <div class="col"></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-meta">Desktop of blocks</span>
+            <h2>Garden</h2>
+            <p>Three columns of small modules — notes, projects, links. More playground than brochure; easy to grow over time.</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="direction-card" href="signal.html">
+          <div class="thumb" aria-hidden="true">
+            <span class="thumb-label">E</span>
+            <div class="mini mini-signal">
+              <div class="r"></div>
+              <div class="r"></div>
+              <div class="r"></div>
+              <div class="r"></div>
+              <div class="r"></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-meta">Single column</span>
+            <h2>Signal</h2>
+            <p>One narrow stack: name → what you do → selected work → contact. Maximum clarity, minimum chrome.</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+
+    <section class="hub-notes" aria-labelledby="notes-title">
+      <h2 id="notes-title">How to read these</h2>
+      <ul>
+        <li>Dashed boxes are placeholders (images, media, unknown content).</li>
+        <li>Brown labels mark layout intent — not UI chrome.</li>
+        <li>Each direction includes Home, Work, and About wireframes, plus a rough mobile sketch.</li>
+        <li>Copy is stand-in; tone can shift once a direction is chosen.</li>
+      </ul>
+    </section>
+
+    <p class="hub-footer">Part of oev-expanse · schematic study only · no production styling yet</p>
+  </main>
+</body>
+</html>
