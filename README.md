@@ -1,9 +1,10 @@
 # Digital Expanse
 
-A hand-written personal website. Plain HTML and CSS, no dependencies.
+A hand-written personal website. Plain HTML and CSS, no dependencies. Hosted on GitHub Pages.
 
-- Edit `projects.json`, then run `node scripts/build.mjs` to refresh the works table in `index.html`.
+- Content lives in `site.json`. Design lives in `src/index.html`.
+- `node scripts/build.mjs` writes `index.html` from the two. Commit the result.
 - Each work lives in `projects/<slug>/vN/`. Old versions are kept forever.
 - Add a line to `log.html` after every change.
-- Rules for agents and humans: see `CLAUDE.md`.
-- `explorations/` holds alternative index designs under consideration. They are hand-written and not fed by the build script until one is chosen.
+- Rules for agents and humans, and the per-session ritual: `CLAUDE.md`.
+- `explorations/` holds earlier index designs for reference.
