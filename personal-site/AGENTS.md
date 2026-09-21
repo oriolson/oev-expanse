@@ -1,16 +1,22 @@
 # AGENTS.md — personal-site
 
 Guidance for agents (and humans) working on Ori Olson’s personal website.
-Read `BRIEF.md` first for purpose and design principles.
+Read `BRIEF.md` first for purpose and design principles; read `DESIGN.md` before
+any visual work.
 
 ## Project structure
 
 ```
 personal-site/
   BRIEF.md              Purpose, audience, design principles, scope
+  DESIGN.md             Visual direction: intention, annotated references,
+                        vocabulary decisions, review checklist
   AGENTS.md             This file
   README.md             How to run and update the site
   build.js              Node build, checks, and preview server (dependency-free today)
+  design/
+    references/         Annotated reference screenshots for DESIGN.md
+    directions/         Self-contained candidate pages (not part of the build)
   assets/
     style.css           Base styles (copied into dist/assets/)
   media/
@@ -149,12 +155,15 @@ need eyes and hands.
 
 ## Design constraints
 
-- **Foundation-phase constraint — temporary by design:** until Ori starts the
-  visual design phase, `style.css` stays modest (readable defaults, accessibility,
-  nothing decorative) so the design happens deliberately rather than ad hoc. This
-  is scaffolding, not the site's character: when the visual design phase begins,
-  the constraint is lifted and the site is expected to become expressive. Only the
-  accessibility requirements above are permanent.
+- **Visual work follows `DESIGN.md`.** The design phase has begun: `DESIGN.md`
+  holds the intention, annotated reference screenshots, content principles, the
+  visual vocabulary table, and the review checklist. Two candidate directions live
+  in `design/directions/a/` and `design/directions/b/` as self-contained pages.
+  Until Ori approves a direction (recorded at the bottom of `DESIGN.md`),
+  `assets/style.css` stays modest — foundation scaffolding, not the site's
+  character. Once a direction is approved, apply its vocabulary to `style.css`
+  and treat the approved page as the visual target. The accessibility
+  requirements above are permanent in every phase.
 - The planned visual archive view must render from the same files in
   `content/projects/` — never a second copy of the content.
 - Public publishing (hosting, domain) is a separate step; do not add
