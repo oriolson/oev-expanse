@@ -166,5 +166,7 @@ need eyes and hands.
   requirements above are permanent in every phase.
 - The planned visual archive view must render from the same files in
   `content/projects/` — never a second copy of the content.
-- Public publishing (hosting, domain) is a separate step; do not add
-  deployment-specific code or absolute URLs.
+- The site deploys to GitHub Pages from `main` via
+  `.github/workflows/deploy-pages.yml` and is served from a subpath — never use
+  absolute or root-relative URLs in content or layout; everything stays relative
+  so the output also works on any future host or domain.

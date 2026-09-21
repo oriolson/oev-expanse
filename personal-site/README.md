@@ -53,6 +53,17 @@ generated and gitignored.
 
 ## Publishing
 
-Not set up yet, deliberately. The build output in `dist/` is a plain folder of
-HTML, CSS, and images that any static host can serve; choosing a host and domain is
-a separate step.
+The site deploys to GitHub Pages at
+https://oriolson.github.io/oev-expanse/ via the repository workflow
+`.github/workflows/deploy-pages.yml`. It runs automatically on every push to
+`main` that touches `personal-site/`, building the site and failing the deploy
+if `--check` fails. It can also be run manually from the repository's Actions
+tab ("Deploy site to GitHub Pages" → Run workflow).
+
+First-run note: the workflow tries to enable Pages itself; if it errors on
+enablement, turn it on once in the repository Settings → Pages → Source:
+"GitHub Actions", then re-run.
+
+The output stays portable — a plain folder of HTML, CSS, and media in `dist/`
+that any static host can serve — so moving to a custom domain or another host
+later is just a hosting change, not a site change.
