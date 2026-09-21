@@ -35,6 +35,10 @@ structural decision should be checkable against this sentence.)
 - Native HTML controls. No icon libraries, no rounded corners, no shadows, no gradients, no hero images, no nav bar.
 - Headings are body size. Hierarchy comes from uppercase, highlight, and whitespace.
 - Left-aligned, small fixed margin, no max-width on the index.
+- Index only: warm paper (#efe6d3), dark-brown ink (#2a1f14), ruled lines every 1.25em,
+  a sticky 14em margin column ("Now", contact) beside the ledger. Versions render as
+  small square frames (2.5em) meant to hold thumbnails later. Shared pages stay on white.
+- Section markers are "~ NAME" in uppercase (the tilde of early academic URLs).
 - A visible "Last updated" line on the index, kept current by the build script.
 - Images are captioned in small uppercase: DATE, PLACE, PHOTO BY.
 - When in doubt, remove.

@@ -16,13 +16,13 @@ const versionsCell = (p) =>
 
 const rows = projects
   .map((p) =>
-    `<tr><td><a href="${esc(p.url)}">${esc(p.title)}</a></td><td>${esc(p.year)}</td><td>${esc(p.function)}</td><td>${esc(p.description)}</td><td>${versionsCell(p)}</td></tr>`
+    `<tr><td>${esc(p.year)}</td><td><a href="${esc(p.url)}">${esc(p.title)}</a></td><td class="fn">${esc(p.function)}</td><td class="desc">${esc(p.description)}</td><td class="versions">${versionsCell(p)}</td></tr>`
   )
   .join("\n");
 
 const table = `<!-- projects:start -->
-<table>
-<tr><th>Title</th><th>Year</th><th>Function</th><th>Description</th><th>Versions</th></tr>
+<table class="ledger">
+<tr><th>Year</th><th>Title</th><th>Function</th><th>Description</th><th>Versions</th></tr>
 ${rows}
 </table>
 <!-- projects:end -->`;

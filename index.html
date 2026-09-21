@@ -4,27 +4,117 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Digital Expanse — always in progress</title>
-<link rel="stylesheet" href="style.css">
+<style>
+:root {
+  --paper: #efe6d3;
+  --ink: #2a1f14;
+  --rule: #b9ad95;
+  --link: #0000ff;
+  --now: #00ff00;
+  --mark: #ffff00;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #1c1712; --ink: #e8dfcc; --rule: #4a3f33; --link: #7f7fff; }
+}
+html { background: var(--paper); }
+body {
+  font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 0;
+  padding: 8px 8px 6em;
+  min-height: 100vh;
+  background:
+    linear-gradient(var(--rule) 1px, transparent 1px) 0 8px / 100% 1.25em repeat-y;
+  background-attachment: local;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.page {
+  display: grid;
+  grid-template-columns: 14em 1fr;
+  gap: 0 2em;
+  align-items: start;
+}
+@media (max-width: 640px) { .page { grid-template-columns: 1fr; } .margin { position: static; } }
+
+/* margin column */
+.margin { position: sticky; top: 8px; }
+.margin p { margin: 0 0 1.25em; }
+.tilde { text-transform: uppercase; }
+.tilde::before { content: "~ "; }
+button {
+  font: inherit; color: var(--ink); background: transparent;
+  border: 1px solid var(--ink); border-radius: 0; padding: 0 0.4em; margin: 0 0.25em 0.25em 0; cursor: pointer;
+}
+button:hover { background: var(--ink); color: var(--paper); }
+
+.now { display: inline; background: var(--now); color: #000; padding: 0 0.2em; }
+.now-list { list-style: none; margin: 0 0 1.25em; padding: 0; }
+.now-list li { margin: 0; }
+.now-list b { font-weight: normal; text-transform: uppercase; font-size: 0.75em; margin-right: 0.5em; }
+
+/* ledger */
+.intro { margin: 0 0 2.5em; max-width: 46em; }
+.ledger { border-collapse: collapse; width: 100%; margin: 0 0 2.5em; }
+.ledger th, .ledger td {
+  text-align: left; vertical-align: top; padding: 0 1em 0 0;
+  border-top: 1px solid var(--ink); line-height: 1.25em;
+}
+.ledger th { font-weight: normal; text-transform: uppercase; font-size: 0.75em; padding-top: 0.2em; border-top: none; }
+.ledger td { padding-top: 0; padding-bottom: 1.25em; }
+.ledger td:first-child { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ledger td.fn { text-transform: uppercase; font-size: 0.75em; padding-top: 0.2em; white-space: nowrap; }
+.ledger td.desc { max-width: 40em; }
+.versions { white-space: nowrap; }
+.versions a {
+  display: inline-block; width: 2.5em; height: 2.5em; line-height: 2.5em; text-align: center;
+  border: 1px solid var(--ink); color: var(--ink); margin: 0 0.25em 0.25em 0; font-size: 0.75em;
+  vertical-align: top;
+}
+.versions a:hover { background: var(--mark); text-decoration: none; }
+
+.foot { font-size: 12px; margin-top: 2.5em; }
+.foot .stamp { background: var(--mark); color: #000; padding: 0 0.2em; }
+</style>
 </head>
 <body>
+<div class="page">
 
-<p>
-<button onclick="location.href='colophon.html'">colophon ↗</button>
-<button onclick="location.href='log.html'">log ↗</button>
-</p>
+<aside class="margin">
+  <p>
+    <button onclick="location.href='colophon.html'">colophon</button>
+    <button onclick="location.href='log.html'">log</button>
+  </p>
 
-<p>I’m ______ based in ______. This is an index of things I make. Every work is its own page and may look nothing like this one. Older versions are kept. The site is always in progress.</p>
+  <p class="tilde">Now</p>
+  <ul class="now-list">
+    <li><b>Where</b> ______</li>
+    <li><b>Making</b> this index</li>
+    <li><b>Reading</b> ______</li>
+    <li><b>Since</b> <span class="now">2026-09-21</span></li>
+  </ul>
 
-<h2><span class="hl-green">Works</span></h2>
+  <p class="tilde">Contact</p>
+  <p><a href="mailto:______">______@______</a><br><a href="https://are.na/">are.na</a></p>
+</aside>
 
+<main>
+  <p class="intro">I’m ______ based in ______. This page is a ledger of things I make. Each work has its own address and may look nothing like this one. Old versions are kept beside new ones. Nothing here is finished; the site is always in progress.</p>
+
+  <p class="tilde">Works</p>
 <!-- projects:start -->
-<table>
-<tr><th>Title</th><th>Year</th><th>Function</th><th>Description</th><th>Versions</th></tr>
-<tr><td><a href="projects/this-website/v1/">Digital Expanse</a></td><td>2026-</td><td>Archive</td><td>This site. An index of works, always in progress.</td><td><a href="projects/this-website/v1/">v1</a></td></tr>
+<table class="ledger">
+<tr><th>Year</th><th>Title</th><th>Function</th><th>Description</th><th>Versions</th></tr>
+<tr><td>2026-</td><td><a href="projects/this-website/v1/">Digital Expanse</a></td><td class="fn">Archive</td><td class="desc">This site. An index of works, always in progress.</td><td class="versions"><a href="projects/this-website/v1/">v1</a></td></tr>
 </table>
 <!-- projects:end -->
 
-<p class="foot">Last updated <!-- updated:start -->2026-09-21<!-- updated:end -->. Made by hand in HTML. See the <a href="colophon.html">colophon</a>.</p>
+  <p class="foot">Last updated <span class="stamp"><!-- updated:start -->2026-09-21<!-- updated:end --></span>. Made by hand in HTML. Ruled paper, condensed type, blue links. See the <a href="colophon.html">colophon</a>.</p>
+</main>
 
+</div>
 </body>
 </html>
