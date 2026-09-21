@@ -128,8 +128,12 @@ Before committing:
 
 ## Design constraints
 
-- Do not build out the full visual design ad hoc; that is a deliberate future step.
-  `style.css` stays modest: readable defaults, accessibility, nothing decorative.
+- **Foundation-phase constraint — temporary by design:** until Ori starts the
+  visual design phase, `style.css` stays modest (readable defaults, accessibility,
+  nothing decorative) so the design happens deliberately rather than ad hoc. This
+  is scaffolding, not the site's character: when the visual design phase begins,
+  the constraint is lifted and the site is expected to become expressive. Only the
+  accessibility requirements above are permanent.
 - The planned visual archive view must render from the same files in
   `content/projects/` — never a second copy of the content.
 - Public publishing (hosting, domain) is a separate step; do not add

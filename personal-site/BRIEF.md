@@ -33,7 +33,9 @@ These are inspirations for principles, not designs to copy.
 ## Design principles
 
 1. **Content before chrome.** Semantic HTML and readable text carry the site.
-   Typography and spacing do the design work; decoration is added last, if at all.
+   During the foundation phase the styling stays deliberately plain; the
+   expressive visual design comes later as its own step, building on readable
+   content rather than replacing it.
 2. **First person, Ori’s words only.** No invented facts, employers, outcomes, or
    metrics. Gaps are visible, marked `[MISSING: …]` until Ori fills them.
 3. **The index is the interface.** One honest list of everything — professional

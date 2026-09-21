@@ -1,6 +1,7 @@
 /*
- * Base styles only: readable defaults, accessible focus and contrast.
- * The full visual design is a later, deliberate step — keep this modest.
+ * Foundation-phase styles: readable defaults, accessible focus and contrast.
+ * "Nothing decorative" is a temporary constraint that lifts when the visual
+ * design phase begins (see AGENTS.md). The accessibility affordances stay.
  */
 
 :root {
