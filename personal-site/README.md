@@ -32,6 +32,10 @@ All words live in `content/` as plain text files with a small Markdown subset
   `content/projects/your-project.md` (the file name becomes the URL, e.g.
   `/projects/your-project/`), fill in the front matter, write the body in your own
   words. Rebuild.
+- **Review proposals** — agents suggest entries as `content/projects/_proposed-*.md`
+  drafts, which the build ignores. You curate: rename a draft to drop the `_proposed-`
+  prefix to publish it, edit it first, or delete it. Nothing goes public without
+  that rename. (One proposal is waiting: `_proposed-pier-journal.md`.)
 - **Edit a project** — edit its file under `content/projects/`, rebuild.
 - **Unknown details** — write `[MISSING: what is needed]` rather than guessing;
   these markers are counted by `--check` so they don’t get forgotten.

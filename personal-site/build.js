@@ -24,6 +24,7 @@ const OUTPUT_DIRECTORY = path.join(SOURCE_DIRECTORY, "dist");
 const SITE_TITLE = "Ori Olson";
 const PREVIEW_PORT = 8080;
 const REQUIRED_PROJECT_FIELDS = ["title", "year", "type", "status", "summary"];
+const EMPTY_PROJECTS_MESSAGE = "Nothing published here yet.";
 const MISSING_CONTENT_PATTERN = /\[MISSING:[^\]]*\]/g;
 
 /* ---------------------------------------------------------------- content */
@@ -143,17 +144,25 @@ function renderProjectListItems(projects, rootPath) {
 function renderHomePage(projects) {
   const homePath = path.join(CONTENT_DIRECTORY, "home.md");
   const { body } = parseFrontMatter(fs.readFileSync(homePath, "utf8"));
+  const projectsHtml =
+    projects.length > 0
+      ? `<ul>\n${renderProjectListItems(projects, "./")}\n</ul>`
+      : `<p>${EMPTY_PROJECTS_MESSAGE}</p>`;
   const mainHtml = [
     `<h1>${SITE_TITLE}</h1>`,
     renderMarkdown(body),
     "<h2>Projects</h2>",
-    `<ul>\n${renderProjectListItems(projects, "./")}\n</ul>`,
+    projectsHtml,
     '<p><a href="./projects/index.html">Full project index</a></p>',
   ].join("\n");
   return renderLayout({ pageTitle: SITE_TITLE, mainHtml, rootPath: "./" });
 }
 
 function renderProjectIndexPage(projects) {
+  if (projects.length === 0) {
+    const mainHtml = `<h1>Projects</h1>\n<p>${EMPTY_PROJECTS_MESSAGE}</p>`;
+    return renderLayout({ pageTitle: "Projects", mainHtml, rootPath: "../" });
+  }
   const rows = projects
     .map(
       (project) => `      <tr>

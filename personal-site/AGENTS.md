@@ -47,12 +47,16 @@ none should be added without a concrete problem that flat files cannot solve.
   headings (`#` to `###` — use `##` and below, the layout owns `<h1>`), paragraphs,
   unordered lists (`- `), links `[text](url)`, images `![alt](src)`, `**bold**`,
   `*italic*`, and `` `code` ``. Anything fancier belongs in the build, not inline HTML.
-- **This site indexes the whole repository.** Sibling folders (like
-  `../pier-journal/`) are works that deserve an entry in `content/projects/`.
-  Describe them using only facts found in their own files, and name their folder
-  path in the body text. Do not hard-link into sibling folders from generated
-  pages yet — the URL depends on how publishing hosts the demos, so use a
-  `[MISSING: public link …]` marker until that is decided.
+- **Ori curates; agents only propose.** The repository is source material, not the
+  portfolio — a sibling folder existing does not entitle it to an entry. When an
+  agent thinks a work belongs on the site, it drafts a proposal as
+  `content/projects/_proposed-<name>.md` (the `_` prefix keeps it out of the
+  build), described using only facts found in that work's own files. Ori publishes
+  by renaming the file to drop the prefix, edits it, or deletes it. Never add,
+  rename, or remove published entries without Ori's direction.
+- **No repository internals in public copy.** Folder paths, file names, branch
+  names, and build details stay out of `content/`. When a demo or source link is
+  wanted but no public URL exists yet, use a `[MISSING: public link …]` marker.
 - **No secrets** — no API keys, tokens, or private data anywhere in this folder.
   Everything in `content/` is public by definition.
 

@@ -8,7 +8,7 @@ summary: A quiet, personal fishing journal for New York’s saltwater edges — 
 
 Pier Journal is a study for a small, private fishing journal: the fish you caught, the pier you stood on.
 
-The work so far lives in the `pier-journal/` folder of this repository:
+The work so far:
 
 - A written product plan.
 - An interactive HTML wireframe that tests the app flow before any native code — photo-first catch logging, swipeable saved spots, schematic iOS chrome.

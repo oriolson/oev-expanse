@@ -50,8 +50,9 @@ These are inspirations for principles, not designs to copy.
 
 ## Architecture
 
-The site lives in its own top-level folder of the `oev-expanse` monorepo, beside
-the works it describes (each repo project gets an entry in `content/projects/`).
+The site lives in its own top-level folder of the `oev-expanse` monorepo. Sibling
+projects are candidate material, not automatic entries: agents may propose drafts,
+but Ori curates what appears on the site (see `AGENTS.md`).
 
 Static-first: Markdown-subset content files with front matter, built by a single
 zero-dependency Node script (`build.js`) into plain HTML in `dist/`. Chosen because

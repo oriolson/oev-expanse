@@ -8,10 +8,12 @@ cover: assets/covers/example.png
 ---
 
 Copy this file to a new name like `my-project.md` (the file name becomes the URL slug).
-Files starting with `_` are ignored by the build.
+Files starting with `_` are ignored by the build. Agents never publish directly:
+they copy this to `_proposed-<name>.md` and leave publishing (the rename) to Ori.
 
-Write the body in Ori’s own voice. Use `[MISSING: what is needed]` for anything not
-yet known — never guess employers, dates, outcomes, or metrics.
+Write the body in Ori’s own voice, without repository internals (folder paths, file
+names). Use `[MISSING: what is needed]` for anything not yet known — never guess
+employers, dates, outcomes, or metrics.
 
 The `cover` field is optional. It is unused today and reserved for the planned
 visual archive view.
