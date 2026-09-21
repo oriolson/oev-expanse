@@ -1,0 +1,48 @@
+{
+  "title": "Digital Expanse",
+  "intro": "I’m ______, a product designer based in ______. What follows is a running account of the things I make, written the way I would tell it to you. There is not much here yet. The board below shows what state each thing is in; the plates show what it looks like; the entries say what it is. Nothing is removed. Things come to rest, they don’t disappear.",
+  "now": {
+    "where": "______",
+    "making": "this page",
+    "reading": "______",
+    "since": "2026-09-21"
+  },
+  "contact": {
+    "email": "______@______",
+    "links": [
+      { "label": "are.na", "url": "https://are.na/" }
+    ]
+  },
+  "frontispiece": {
+    "image": null,
+    "caption": "Frontispiece — ______, 2026. Photo by ______."
+  },
+  "kinds": ["Product", "Tool", "Text", "Site"],
+  "states": ["Idea", "Making", "Shipped", "Resting"],
+  "works": [
+    {
+      "slug": "this-website",
+      "title": "Digital Expanse",
+      "kind": "Site",
+      "state": "Making",
+      "year": "2026-",
+      "prose": "This site, an index of works, always in progress. It began as a table on ruled paper, then a chart, then a manuscript. Now it is a manuscript with plates: the pictures do the first telling and the text does the second.",
+      "image": null,
+      "caption": "2026 Sept, this index, v1",
+      "versions": ["v1"]
+    }
+  ],
+  "ideas": [
+    { "title": "untitled idea", "kind": "Product" },
+    { "title": "untitled idea", "kind": "Product" },
+    { "title": "untitled idea", "kind": "Tool" }
+  ],
+  "plates": [
+    { "image": null, "ratio": "3:2", "caption": "2026 Sept, sketch" },
+    { "image": null, "ratio": "3:4", "caption": "2026 Sept, screenshot" },
+    { "image": null, "ratio": "1:1", "caption": "2026 Sept, seen in ______" },
+    { "image": null, "ratio": "4:3", "caption": "2026 Sept, detail" },
+    { "image": null, "ratio": "3:2", "caption": "2026 Sept, notebook" },
+    { "image": null, "ratio": "1:1", "caption": "2026 Sept, ______" }
+  ]
+}

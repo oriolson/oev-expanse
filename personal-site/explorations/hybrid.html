@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digital Expanse — hybrid</title>
+<style>
+:root {
+  --paper: #efe6d3; --ink: #2a1f14; --rule: #c4b89f; --dim: #8d8270;
+  --link: #0000ff; --go: #00ff00; --mark: #ffff00;
+  --lh: 1.5rem;             /* one ruled line; everything snaps to it */
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #1c1712; --ink: #e8dfcc; --rule: #3d3428; --dim: #8a7d6a; --link: #7f7fff; }
+}
+html { background: var(--paper); }
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 17px; line-height: var(--lh); color: var(--ink);
+  margin: 0; padding: var(--lh) 8px 6rem;
+  background: linear-gradient(var(--rule) 1px, transparent 1px) 0 calc(var(--lh) - 1px) / 100% var(--lh) repeat-y;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.sans { font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif; }
+
+.page { display: grid; grid-template-columns: 15em minmax(0, 40em); gap: 0 3em; align-items: start; }
+@media (max-width: 720px) { .page { grid-template-columns: 1fr; } .margin { position: static; order: 2; } main { order: 1; } }
+
+/* ---------- margin: buttons, now, minimap ---------- */
+.margin { position: sticky; top: var(--lh); font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif; font-size: 16px; }
+.margin p { margin: 0 0 var(--lh); }
+.tilde { text-transform: uppercase; margin: 0; }
+.tilde::before { content: "~ "; }
+button { font: inherit; color: var(--ink); background: transparent; border: 1px solid var(--ink); border-radius: 0; padding: 0 0.4em; cursor: pointer; }
+button:hover { background: var(--ink); color: var(--paper); }
+.now-list { list-style: none; margin: 0 0 var(--lh); padding: 0; }
+.now-list b { font-weight: normal; text-transform: uppercase; font-size: 0.75em; margin-right: 0.5em; }
+.now { background: var(--go); color: #000; padding: 0 0.2em; }
+
+.map { display: grid; grid-template-columns: 3.5em repeat(7, 1fr); margin: 0 0 var(--lh); font-size: 0.7em; line-height: 1.2; }
+.map > div { height: 1.4em; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); position: relative; }
+.map .ax { border: 0; text-transform: uppercase; color: var(--dim); overflow: hidden; }
+.map .ax.y { border-right: 1px solid var(--rule); }
+.map .yr { writing-mode: initial; text-align: center; }
+.map a { position: absolute; inset: 0; display: block; }
+.map a::after { content: ""; position: absolute; width: 0.55em; height: 0.55em; left: 50%; top: 50%; transform: translate(-50%, -50%); background: var(--go); }
+.map a:hover::after { background: var(--mark); }
+.map .cell::before { content: ""; position: absolute; width: 2px; height: 2px; left: 50%; top: 50%; transform: translate(-50%, -50%); background: var(--rule); }
+.legend { font-size: 0.75em; color: var(--dim); text-transform: uppercase; }
+
+/* ---------- body: prose entries ---------- */
+main > p { margin: 0 0 var(--lh); }
+h2 { font: inherit; font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif; font-size: 16px; text-transform: uppercase; margin: var(--lh) 0 0; }
+h2::before { content: "~ "; }
+.entry { display: grid; grid-template-columns: 4.5em 1fr; gap: 0 1em; margin: var(--lh) 0 0; }
+.entry .yr { font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif; font-size: 16px; color: var(--dim); }
+.entry .yr small { display: block; text-transform: uppercase; font-size: 0.75em; }
+.entry p { margin: 0; }
+.entry b { font-weight: normal; font-variant: small-caps; letter-spacing: 0.04em; }
+.entry b a { color: var(--ink); background: var(--mark); }
+.entry b a:hover { background: var(--go); text-decoration: none; }
+.entry .frames { grid-column: 2; margin-top: 0.25rem; font-family: "Arial Narrow", Arial, sans-serif; }
+.frames a {
+  display: inline-block; width: 2.25em; height: 2.25em; line-height: 2.25em; text-align: center;
+  border: 1px solid var(--ink); color: var(--ink); font-size: 0.7em; margin-right: 0.3em; vertical-align: top;
+}
+.frames a:hover { background: var(--mark); text-decoration: none; }
+.entry:target b a { background: var(--go); }
+
+.foot { font-family: "Arial Narrow", Arial, sans-serif; font-size: 12px; color: var(--dim); margin-top: calc(var(--lh) * 2) !important; }
+.foot .stamp { background: var(--mark); color: #000; padding: 0 0.2em; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<aside class="margin">
+  <p><button onclick="location.href='../colophon.html'">colophon</button> <button onclick="location.href='../log.html'">log</button></p>
+
+  <p class="tilde">Now</p>
+  <ul class="now-list">
+    <li><b>Where</b> ______</li>
+    <li><b>Making</b> this page</li>
+    <li><b>Reading</b> ______</li>
+    <li><b>Since</b> <span class="now">2026-09-21</span></li>
+  </ul>
+
+  <p class="tilde">Map</p>
+  <div class="map" aria-label="Works by year and kind">
+    <div class="ax"></div>
+    <div class="ax yr">20</div><div class="ax yr">21</div><div class="ax yr">22</div><div class="ax yr">23</div><div class="ax yr">24</div><div class="ax yr">25</div><div class="ax yr">26</div>
+    <div class="ax y">Archive</div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"><a href="#this-website" title="Digital Expanse, 2026"></a></div>
+    <div class="ax y">Tool</div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="ax y">Text</div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="ax y">Joke</div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="ax y">Gift</div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+  </div>
+  <p class="legend">Years across, kinds down. Each point is a work below.</p>
+
+  <p class="tilde">Contact</p>
+  <p><a href="mailto:______">______@______</a><br><a href="https://are.na/">are.na</a></p>
+</aside>
+
+<main>
+  <p>I’m ______ based in ______. What follows is a running account of the things I make, written the way I would tell it to you. Each work has its own address and its own manner. The map in the margin shows where each one sits in time; the frames under each entry hold its versions. Nothing is removed. The site is always in progress.</p>
+
+  <h2>Works</h2>
+
+  <div class="entry" id="this-website">
+    <div class="yr">2026–<small>Archive</small></div>
+    <p><b><a href="../projects/this-website/v1/">Digital Expanse</a></b>. This site, an index of works, always in progress. It began as a table on a ruled page, became a chart, became a manuscript, and is now all three at once. The earlier shapes are kept beside the newer ones, which is what the frames below are for.</p>
+    <div class="frames"><a href="../projects/this-website/v1/" title="version 1">v1</a></div>
+  </div>
+
+  <p class="foot">Last updated <span class="stamp">2026-09-21</span>. Ruled paper, a serif for the telling, a condensed sans for the margins, pure blue for links. See the <a href="../colophon.html">colophon</a>.</p>
+</main>
+
+</div>
+</body>
+</html>
