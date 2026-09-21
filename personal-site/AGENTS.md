@@ -26,7 +26,8 @@ My website is a ______. (Owner fills this in. Until then, treat the site as
 1. `node scripts/build.mjs --check` (never hand-edit index.html; it is generated). The deploy
    runs the same check and fails on errors.
 2. Add a one-line entry to the top of the list in `log.html` (date, what changed).
-3. Commit with a plain message. Push only if the owner asked.
+3. Commit with a plain message. Push only if the owner asked. Publishing to the live site is a
+   separate, explicit step (`scripts/publish.sh`); only do it when the owner asks.
 4. If a design decision was made, record it in this file under "Design decisions".
 
 ## Files
@@ -90,7 +91,10 @@ My website is a ______. (Owner fills this in. Until then, treat the site as
 Copy `projects/<slug>/vN` to `vN+1`, edit the copy, append to `versions[]`. Never touch vN.
 
 ## Hosting
-GitHub Pages via Actions: the workflow runs the build with `--check` and uploads `personal-site/`
-as the site root. index.html is committed anyway so the folder works from disk and any static host.
+GitHub Pages, branch-based: Pages serves the `gh-pages` branch root. Publish with
+`bash personal-site/scripts/publish.sh` (builds with `--check`, copies this folder into a
+`gh-pages` worktree at `../oev-pages`, commits, pushes). GitHub Actions is disabled for this
+account, so `.github/workflows/deploy-pages.yml` is dormant; if Actions is re-enabled, switch
+Pages back to "GitHub Actions" and the workflow takes over with no other change.
 The site lives under the `/oev-expanse/` subpath, so every link is relative; never use `/`-rooted paths.
 Custom domain later: add a `CNAME` file in `personal-site/` containing the domain.

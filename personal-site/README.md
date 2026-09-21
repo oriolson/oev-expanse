@@ -7,5 +7,5 @@ A hand-written personal website. Plain HTML and CSS, no dependencies. Hosted on 
 - Each work lives in `projects/<slug>/vN/`. Old versions are kept forever.
 - Add a line to `log.html` after every change.
 - Rules for agents and humans, and the per-session ritual: `AGENTS.md`.
-- Deploys to https://oriolson.github.io/oev-expanse/ via the repo-root Pages workflow.
+- Publish to https://oriolson.github.io/oev-expanse/ with `bash personal-site/scripts/publish.sh` (pushes the gh-pages branch).
 - `explorations/` holds earlier index designs for reference.
