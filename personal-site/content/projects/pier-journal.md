@@ -2,7 +2,8 @@
 title: Pier Journal
 year: 2026
 type: Product and interface study
-status: In progress
+status: in progress
+publication: draft
 summary: A quiet, personal fishing journal for New York’s saltwater edges — a product plan and interactive wireframes ahead of a native iOS app.
 ---
 

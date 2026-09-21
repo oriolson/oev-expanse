@@ -19,7 +19,7 @@ Other commands:
 
 ```
 node build.js            # just build into dist/
-node build.js --check    # build + validate content, links, and alt text
+node build.js --check    # build + validate content, links, media, and alt text
 ```
 
 ## Update the site
@@ -32,13 +32,21 @@ All words live in `content/` as plain text files with a small Markdown subset
   `content/projects/your-project.md` (the file name becomes the URL, e.g.
   `/projects/your-project/`), fill in the front matter, write the body in your own
   words. Rebuild.
-- **Review proposals** — agents suggest entries as `content/projects/_proposed-*.md`
-  drafts, which the build ignores. You curate: rename a draft to drop the `_proposed-`
-  prefix to publish it, edit it first, or delete it. Nothing goes public without
-  that rename. (One proposal is waiting: `_proposed-pier-journal.md`.)
+- **Publish a project** — every entry has `publication: draft` or
+  `publication: published` in its front matter. Drafts never appear in the built
+  site. Agents propose entries as drafts; you curate by flipping the field to
+  `published` (or editing/deleting the draft). Publishing requires resolving all
+  `[MISSING: …]` markers — `--check` fails otherwise. (One draft is waiting:
+  `pier-journal.md`.)
+- **Project status** — separate from publication: `status: in progress` or
+  `status: complete` describes the work itself and is shown on the site.
+- **Add images or video** — put files in `media/<project-slug>/` and reference
+  them with `media/…` paths; captions, alt text, video posters, and the `@video`
+  syntax are documented in `AGENTS.md`.
 - **Edit a project** — edit its file under `content/projects/`, rebuild.
 - **Unknown details** — write `[MISSING: what is needed]` rather than guessing;
-  these markers are counted by `--check` so they don’t get forgotten.
+  markers are fine in drafts and on the homepage, and `--check` counts them so
+  they don’t get forgotten.
 
 Run `node build.js --check` before committing. Never edit or commit `dist/` — it is
 generated and gitignored.

@@ -43,10 +43,13 @@ These are inspirations for principles, not designs to copy.
    minutes, not a migration.
 5. **One source, many views.** Content lives once in `content/`; the list view
    exists now and the visual archive view will render the same files later.
-6. **Small and durable.** Zero runtime dependencies, standard web technology,
-   output that any static host (or a folder on disk) can serve for decades.
+6. **Small and durable.** Standard web technology and as few dependencies as the
+   job allows — a small, focused library is welcome when it demonstrably improves
+   reliability or maintainability, a framework is not. The output stays a folder
+   of files any static host (or a disk) can serve for decades.
 7. **Accessible by default.** Landmarks, skip link, visible focus, sufficient
-   contrast, alt text required — checked on every build.
+   contrast, alt text on images, captioned and user-controlled video — checked on
+   every build.
 
 ## Architecture
 
@@ -55,12 +58,15 @@ projects are candidate material, not automatic entries: agents may propose draft
 but Ori curates what appears on the site (see `AGENTS.md`).
 
 Static-first: Markdown-subset content files with front matter, built by a single
-zero-dependency Node script (`build.js`) into plain HTML in `dist/`. Chosen because
-the repository has no existing framework (its one other project is hand-written
-HTML), and because a site meant to last decades should not depend on a package
-ecosystem to render three page types. If the site outgrows this (search, feeds,
-hundreds of pages), migrating the same content files to a small static site
-generator such as Eleventy is straightforward.
+Node script (`build.js`) into plain HTML in `dist/`, with project media alongside
+in `media/<slug>/`. Chosen because the repository has no existing framework (its
+one other project is hand-written HTML), and because a site of three page types
+should carry as little machinery as possible. The build is dependency-free today,
+but that is a default, not a dogma: a small, focused library (for example a real
+Markdown parser replacing the in-house subset) is adopted when it demonstrably
+improves reliability or maintainability. If the site outgrows this shape entirely
+(search, feeds, hundreds of pages), migrating the same content files to a small
+static site generator such as Eleventy is straightforward.
 
 ## Initial scope (v1)
 
