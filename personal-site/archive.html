@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>B · Archive — personal site study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+  <header class="study-bar">
+    <a class="study-brand" href="index.html">Ori Olson <small>site study</small></a>
+    <nav class="dir-nav" aria-label="Directions">
+      <a href="index.html">Hub</a>
+      <a href="editorial.html">A · Editorial</a>
+      <a href="archive.html" aria-current="page">B · Archive</a>
+      <a href="split.html">C · Split</a>
+      <a href="garden.html">D · Garden</a>
+      <a href="signal.html">E · Signal</a>
+      <a href="archive-mixes.html">B mixes</a>
+    </nav>
+  </header>
+
+  <main class="direction">
+    <header class="dir-intro">
+      <div>
+        <p class="hub-eyebrow">Direction B</p>
+        <h1>Archive</h1>
+        <p class="thesis">The site as an index. Identity sits in a narrow rail; the main plane is a filterable table of projects and notes. Feels like a lab log more than a portfolio brochure. Want warmth or a featured project without leaving the index? See <a href="archive-mixes.html">Archive mixes</a>.</p>
+      </div>
+      <dl class="dir-meta">
+        <dt>Best if</dt>
+        <dd>You ship often and want everything findable</dd>
+        <dt>Risk</dt>
+        <dd>Can feel cold without a strong first entry point</dd>
+        <dt>Pages</dt>
+        <dd>Index · Entry · About (rail)</dd>
+      </dl>
+    </header>
+
+    <div class="page-stack">
+      <article class="page-frame" aria-labelledby="ar-home-label">
+        <div class="page-chrome">
+          <span id="ar-home-label">Home / Index</span>
+          <span class="hint">Rail identity + project table</span>
+        </div>
+        <div class="viewport ar-shell ar-home">
+          <aside class="ar-rail">
+            <div>
+              <h2 class="name">Ori<br>Olson</h2>
+              <p class="bio" style="margin-top:12px">Small tools, interface studies, saltwater edges.</p>
+            </div>
+            <nav class="nav-col" aria-label="Section">
+              <span class="on">All work</span>
+              <span>Notes</span>
+              <span>About</span>
+              <span>Contact</span>
+            </nav>
+            <span class="annotate" style="position:relative;top:0;left:0">Sticky rail on desktop</span>
+          </aside>
+          <div class="ar-main">
+            <div class="filter" aria-hidden="true">
+              <span class="on">All</span>
+              <span>Apps</span>
+              <span>Studies</span>
+              <span>Writing</span>
+            </div>
+            <table class="ar-table">
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Title</th>
+                  <th>Kind</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="year">2026</td>
+                  <td class="title">Pier Journal</td>
+                  <td class="kind">App study</td>
+                  <td class="kind">Active</td>
+                </tr>
+                <tr>
+                  <td class="year">2025</td>
+                  <td class="title">Personal fishing log</td>
+                  <td class="kind">Experiment</td>
+                  <td class="kind">Paused</td>
+                </tr>
+                <tr>
+                  <td class="year">2025</td>
+                  <td class="title">oev-expanse</td>
+                  <td class="kind">Repo / garden</td>
+                  <td class="kind">Ongoing</td>
+                </tr>
+                <tr>
+                  <td class="year">—</td>
+                  <td class="title">Placeholder entry</td>
+                  <td class="kind">Note</td>
+                  <td class="kind">Draft</td>
+                </tr>
+                <tr>
+                  <td class="year">—</td>
+                  <td class="title">Placeholder entry</td>
+                  <td class="kind">Study</td>
+                  <td class="kind">—</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <article class="page-frame" aria-labelledby="ar-entry-label">
+        <div class="page-chrome">
+          <span id="ar-entry-label">Work entry</span>
+          <span class="hint">Detail page from a table row</span>
+        </div>
+        <div class="viewport ar-entry">
+          <div>
+            <p style="font-size:12px;color:var(--mute);margin:0 0 8px">← All work</p>
+            <h2>Pier Journal</h2>
+            <p class="meta-line">2026 · App study · Interactive wireframe</p>
+            <div class="body">
+              <div class="ghost-text">
+                <span class="w100"></span>
+                <span class="w85"></span>
+                <span class="w70"></span>
+                <span class="w100"></span>
+                <span class="w55"></span>
+              </div>
+              <div class="ph" style="height:180px;margin-top:24px">Primary capture / screenshot</div>
+            </div>
+          </div>
+          <aside class="aside">
+            <div class="ph">Meta</div>
+            <div class="ghost-text">
+              <span class="w70"></span>
+              <span class="w55"></span>
+              <span class="w85"></span>
+            </div>
+            <p style="font-size:12px;color:var(--mute);margin-top:16px">Stack · links · related</p>
+          </aside>
+        </div>
+      </article>
+
+      <article class="page-frame" aria-labelledby="ar-about-label">
+        <div class="page-chrome">
+          <span id="ar-about-label">About</span>
+          <span class="hint">Same shell · content swaps in main</span>
+        </div>
+        <div class="viewport ar-home">
+          <aside class="ar-rail">
+            <div>
+              <h2 class="name">Ori<br>Olson</h2>
+            </div>
+            <nav class="nav-col">
+              <span>All work</span>
+              <span>Notes</span>
+              <span class="on">About</span>
+              <span>Contact</span>
+            </nav>
+          </aside>
+          <div class="ar-main" style="max-width:440px">
+            <p style="margin:0 0 14px;font-size:16px;color:var(--mute)">Short about copy lives here — same rail, quieter main column. Contact as plain links at the bottom.</p>
+            <div class="ghost-text">
+              <span class="w100"></span>
+              <span class="w85"></span>
+              <span class="w70"></span>
+              <span class="w55"></span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <section aria-labelledby="ar-mobile">
+      <h2 id="ar-mobile" class="hub-eyebrow" style="margin:36px 0 12px">Mobile sketches</h2>
+      <div class="mobile-strip">
+        <div class="phone">
+          <span class="label">Index</span>
+          <div class="phone-inner">
+            <div class="ph ph-solid" style="height:36px">Name</div>
+            <div class="ph" style="height:18px">Filters</div>
+            <div class="ph" style="height:36px">Row</div>
+            <div class="ph" style="height:36px">Row</div>
+            <div class="ph" style="height:36px">Row</div>
+            <div class="ph" style="height:36px">Row</div>
+          </div>
+        </div>
+        <div class="phone">
+          <span class="label">Entry</span>
+          <div class="phone-inner">
+            <div class="ph" style="height:16px">Back</div>
+            <div class="ph ph-solid" style="height:40px">Title</div>
+            <div class="ph" style="flex:1">Body</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

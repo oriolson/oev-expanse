@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>C · Split — personal site study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+  <header class="study-bar">
+    <a class="study-brand" href="index.html">Ori Olson <small>site study</small></a>
+    <nav class="dir-nav" aria-label="Directions">
+      <a href="index.html">Hub</a>
+      <a href="editorial.html">A · Editorial</a>
+      <a href="archive.html">B · Archive</a>
+      <a href="split.html" aria-current="page">C · Split</a>
+      <a href="garden.html">D · Garden</a>
+      <a href="signal.html">E · Signal</a>
+      <a href="archive-mixes.html">B mixes</a>
+    </nav>
+  </header>
+
+  <main class="direction">
+    <header class="dir-intro">
+      <div>
+        <p class="hub-eyebrow">Direction C</p>
+        <h1>Split</h1>
+        <p class="thesis">A persistent identity pane on the left; the right side is a studio wall of featured work. Navigation never leaves the name. Feels like walking into a small atelier.</p>
+      </div>
+      <dl class="dir-meta">
+        <dt>Best if</dt>
+        <dd>You want brand + work visible in one glance</dd>
+        <dt>Risk</dt>
+        <dd>Awkward on narrow screens unless the left pane collapses</dd>
+        <dt>Pages</dt>
+        <dd>Home · Work grid · About</dd>
+      </dl>
+    </header>
+
+    <div class="page-stack">
+      <article class="page-frame" aria-labelledby="sp-home-label">
+        <div class="page-chrome">
+          <span id="sp-home-label">Home</span>
+          <span class="hint">Identity fixed · work rotates</span>
+        </div>
+        <div class="viewport sp-home">
+          <aside class="sp-left">
+            <div>
+              <h2 class="brand">Ori<br>Olson</h2>
+              <p class="one-liner">Interface studies and small apps from New York.</p>
+              <span class="annotate" style="position:relative;display:inline-block;margin-top:16px">Brand stays put</span>
+            </div>
+            <nav class="nav-stack" aria-label="Primary">
+              <span class="on">Selected</span>
+              <span>All work</span>
+              <span>About</span>
+              <span>Email</span>
+            </nav>
+          </aside>
+          <div class="sp-right">
+            <div class="ph feat ph-solid">
+              <span class="feat-cap">Featured · Pier Journal — photo-first catch log</span>
+            </div>
+            <div class="row">
+              <div class="ph">Secondary</div>
+              <div class="ph">Secondary</div>
+            </div>
+            <span class="annotate" style="position:relative">Right pane = current exhibit</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="page-frame" aria-labelledby="sp-work-label">
+        <div class="page-chrome">
+          <span id="sp-work-label">Work</span>
+          <span class="hint">Same left pane · grid on the right</span>
+        </div>
+        <div class="viewport sp-home">
+          <aside class="sp-left">
+            <div>
+              <h2 class="brand">Ori<br>Olson</h2>
+            </div>
+            <nav class="nav-stack">
+              <span>Selected</span>
+              <span class="on">All work</span>
+              <span>About</span>
+              <span>Email</span>
+            </nav>
+          </aside>
+          <div class="sp-work" style="flex:1">
+            <div class="grid">
+              <div class="cell">
+                <div class="ph">01</div>
+                <strong>Pier Journal</strong>
+                <small>App study · 2026</small>
+              </div>
+              <div class="cell">
+                <div class="ph">02</div>
+                <strong>Fishing log</strong>
+                <small>Experiment · 2025</small>
+              </div>
+              <div class="cell">
+                <div class="ph">03</div>
+                <strong>oev-expanse</strong>
+                <small>Repo · ongoing</small>
+              </div>
+              <div class="cell">
+                <div class="ph">04</div>
+                <strong>Placeholder</strong>
+                <small>Study</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="page-frame" aria-labelledby="sp-about-label">
+        <div class="page-chrome">
+          <span id="sp-about-label">About</span>
+          <span class="hint">Copy left · portrait / place right</span>
+        </div>
+        <div class="viewport sp-about">
+          <div class="copy">
+            <h2>About</h2>
+            <p style="color:var(--mute);margin:0 0 12px">Placeholder: I build personal software and interface studies — often agent-assisted, always meant to stay small enough to hold.</p>
+            <div class="ghost-text">
+              <span class="w100"></span>
+              <span class="w85"></span>
+              <span class="w70"></span>
+              <span class="w55"></span>
+            </div>
+            <p style="margin-top:24px;font-size:13px">ori@… · elsewhere</p>
+          </div>
+          <div class="ph portrait">Place or portrait</div>
+        </div>
+      </article>
+    </div>
+
+    <section aria-labelledby="sp-mobile">
+      <h2 id="sp-mobile" class="hub-eyebrow" style="margin:36px 0 12px">Mobile sketches</h2>
+      <div class="mobile-strip">
+        <div class="phone">
+          <span class="label">Home</span>
+          <div class="phone-inner">
+            <div class="ph ph-solid" style="height:64px">Name + nav</div>
+            <div class="ph" style="flex:1.2">Featured</div>
+            <div class="ph" style="height:48px">Row</div>
+          </div>
+        </div>
+        <div class="phone">
+          <span class="label">Work</span>
+          <div class="phone-inner">
+            <div class="ph" style="height:28px">Nav</div>
+            <div class="ph" style="flex:1">Tile</div>
+            <div class="ph" style="flex:1">Tile</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

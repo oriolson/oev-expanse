@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>A · Editorial — personal site study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+  <header class="study-bar">
+    <a class="study-brand" href="index.html">Ori Olson <small>site study</small></a>
+    <nav class="dir-nav" aria-label="Directions">
+      <a href="index.html">Hub</a>
+      <a href="editorial.html" aria-current="page">A · Editorial</a>
+      <a href="archive.html">B · Archive</a>
+      <a href="split.html">C · Split</a>
+      <a href="garden.html">D · Garden</a>
+      <a href="signal.html">E · Signal</a>
+      <a href="archive-mixes.html">B mixes</a>
+    </nav>
+  </header>
+
+  <main class="direction">
+    <header class="dir-intro">
+      <div>
+        <p class="hub-eyebrow">Direction A</p>
+        <h1>Editorial</h1>
+        <p class="thesis">One composition on first paint: brand as the dominant signal, a short line, and a CTA group over a full-bleed atmosphere plane. Secondary pages stay quiet and list-led.</p>
+      </div>
+      <dl class="dir-meta">
+        <dt>Best if</dt>
+        <dd>Presence and tone matter as much as the project list</dd>
+        <dt>Risk</dt>
+        <dd>Needs a real visual anchor; abstract gradients alone won’t carry it</dd>
+        <dt>Pages</dt>
+        <dd>Home · Work · About</dd>
+      </dl>
+    </header>
+
+    <div class="page-stack">
+      <article class="page-frame" aria-labelledby="ed-home-label">
+        <div class="page-chrome">
+          <span id="ed-home-label">Home</span>
+          <span class="hint">First viewport = brand + line + CTA only</span>
+        </div>
+        <div class="viewport ed-home">
+          <span class="annotate" style="top:12px;right:16px">Full-bleed hero plane</span>
+          <section class="ed-hero" aria-label="Hero composition">
+            <h2 class="brand">Ori<br>Olson</h2>
+            <p class="tag">Building small tools and interface studies — usually near the water.</p>
+            <div class="cta-row">
+              <span class="cta">See work</span>
+              <span class="cta ghost">Write / notes</span>
+            </div>
+            <span class="annotate" style="bottom:18px;right:20px">No cards · no stats · no overlays</span>
+          </section>
+          <div class="ed-below">
+            <div>
+              <h3>Below the fold</h3>
+              <div class="ghost-text">
+                <span class="w70"></span>
+                <span class="w85"></span>
+                <span class="w55"></span>
+              </div>
+            </div>
+            <div>
+              <h3>Selected project strip</h3>
+              <div class="ph" style="height:72px">Project thumb · not a card grid</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="page-frame" aria-labelledby="ed-work-label">
+        <div class="page-chrome">
+          <span id="ed-work-label">Work</span>
+          <span class="hint">Chronological list with quiet thumbs</span>
+        </div>
+        <div class="viewport ed-work">
+          <div class="wire-nav">
+            <span class="name">Ori Olson</span>
+            <div class="links"><span>Home</span><span class="on">Work</span><span>About</span></div>
+          </div>
+          <ul class="list">
+            <li>
+              <div class="ph thumb-sq">img</div>
+              <div>
+                <strong>Pier Journal</strong>
+                <div class="ghost-text" style="margin-top:6px"><span class="w70"></span><span class="w40"></span></div>
+              </div>
+              <span style="color:var(--mute);font-size:12px">2026</span>
+            </li>
+            <li>
+              <div class="ph thumb-sq">img</div>
+              <div>
+                <strong>Fishing log experiments</strong>
+                <div class="ghost-text" style="margin-top:6px"><span class="w55"></span></div>
+              </div>
+              <span style="color:var(--mute);font-size:12px">2025</span>
+            </li>
+            <li>
+              <div class="ph thumb-sq">img</div>
+              <div>
+                <strong>oev-expanse</strong>
+                <div class="ghost-text" style="margin-top:6px"><span class="w85"></span><span class="w40"></span></div>
+              </div>
+              <span style="color:var(--mute);font-size:12px">ongoing</span>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="page-frame" aria-labelledby="ed-about-label">
+        <div class="page-chrome">
+          <span id="ed-about-label">About</span>
+          <span class="hint">Short prose · no sidebar clutter</span>
+        </div>
+        <div class="viewport ed-about">
+          <div class="wire-nav">
+            <span class="name">Ori Olson</span>
+            <div class="links"><span>Home</span><span>Work</span><span class="on">About</span></div>
+          </div>
+          <div class="prose">
+            <p>Placeholder bio: I design and ship small apps, often with agents in the loop. Based in New York. Prefer quiet software.</p>
+            <p>Contact · email / elsewhere as simple text links — not a social icon row.</p>
+            <div class="ph" style="height:160px;margin-top:24px;max-width:280px">Optional portrait / place photo</div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <section aria-labelledby="ed-mobile">
+      <h2 id="ed-mobile" class="hub-eyebrow" style="margin:36px 0 12px">Mobile sketches</h2>
+      <div class="mobile-strip">
+        <div class="phone">
+          <span class="label">Home</span>
+          <div class="phone-inner">
+            <div class="ph ph-solid" style="flex:1.4">Hero plane</div>
+            <div class="ph" style="height:28px">Name</div>
+            <div class="ph" style="height:16px">Line</div>
+            <div class="ph" style="height:24px">CTA</div>
+          </div>
+        </div>
+        <div class="phone">
+          <span class="label">Work</span>
+          <div class="phone-inner">
+            <div class="ph" style="height:20px">Nav</div>
+            <div class="ph" style="height:48px">Row</div>
+            <div class="ph" style="height:48px">Row</div>
+            <div class="ph" style="height:48px">Row</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

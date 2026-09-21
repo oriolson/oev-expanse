@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>E · Signal — personal site study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+  <header class="study-bar">
+    <a class="study-brand" href="index.html">Ori Olson <small>site study</small></a>
+    <nav class="dir-nav" aria-label="Directions">
+      <a href="index.html">Hub</a>
+      <a href="editorial.html">A · Editorial</a>
+      <a href="archive.html">B · Archive</a>
+      <a href="split.html">C · Split</a>
+      <a href="garden.html">D · Garden</a>
+      <a href="signal.html" aria-current="page">E · Signal</a>
+      <a href="archive-mixes.html">B mixes</a>
+    </nav>
+  </header>
+
+  <main class="direction">
+    <header class="dir-intro">
+      <div>
+        <p class="hub-eyebrow">Direction E</p>
+        <h1>Signal</h1>
+        <p class="thesis">One narrow column. Name, one sentence, a few links, one CTA. No hero image required — typography and sequence do the work. The most portable direction; the easiest to ship first.</p>
+      </div>
+      <dl class="dir-meta">
+        <dt>Best if</dt>
+        <dd>You want clarity and speed over atmosphere</dd>
+        <dt>Risk</dt>
+        <dd>Can feel thin if the writing isn’t sharp</dd>
+        <dt>Pages</dt>
+        <dd>Home stack · Work list · About</dd>
+      </dl>
+    </header>
+
+    <div class="page-stack">
+      <article class="page-frame" aria-labelledby="si-home-label">
+        <div class="page-chrome">
+          <span id="si-home-label">Home</span>
+          <span class="hint">Single column · ~560px measure</span>
+        </div>
+        <div class="viewport">
+          <div class="si-home">
+            <span class="annotate" style="position:relative;align-self:flex-start">Brand is the first block</span>
+            <h2 class="brand">Ori Olson</h2>
+            <p class="signal">I make small apps and interface studies — usually personal, often near the water.</p>
+            <div class="block">
+              <h3>Selected</h3>
+              <div class="links">
+                <span>Pier Journal — catch journal study</span>
+                <span>oev-expanse — project garden</span>
+                <span>Fishing log — earlier experiment</span>
+              </div>
+            </div>
+            <div class="block">
+              <h3>Elsewhere</h3>
+              <div class="links">
+                <span>Email</span>
+                <span>GitHub</span>
+                <span>Notes (soon)</span>
+              </div>
+            </div>
+            <span class="cta">All work</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="page-frame" aria-labelledby="si-work-label">
+        <div class="page-chrome">
+          <span id="si-work-label">Work</span>
+          <span class="hint">Same measure · listed with short blurbs</span>
+        </div>
+        <div class="viewport si-work">
+          <p style="font-size:12px;color:var(--mute);margin:0 0 8px">← Home</p>
+          <h2 style="font-family:'IBM Plex Serif',Georgia,serif;font-weight:400;font-size:28px;letter-spacing:-0.03em;margin:0 0 24px">Work</h2>
+          <div class="item">
+            <strong>Pier Journal</strong>
+            <p>Private, photo-first fishing journal for NYC saltwater piers. HTML study ahead of native.</p>
+          </div>
+          <div class="item">
+            <strong>Fishing log experiments</strong>
+            <p>Earlier planning and prototypes around personal catch records.</p>
+          </div>
+          <div class="item">
+            <strong>oev-expanse</strong>
+            <p>A repo of agent-coded microapps and studies.</p>
+          </div>
+          <div class="item">
+            <strong>Placeholder</strong>
+            <p>Ghost text for the next thing.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="page-frame" aria-labelledby="si-about-label">
+        <div class="page-chrome">
+          <span id="si-about-label">About</span>
+          <span class="hint">Prose only · same column</span>
+        </div>
+        <div class="viewport si-about">
+          <p style="font-size:12px;color:var(--mute);margin:0 0 8px">← Home</p>
+          <h2 style="font-family:'IBM Plex Serif',Georgia,serif;font-weight:400;font-size:28px;letter-spacing:-0.03em;margin:0 0 20px">About</h2>
+          <p>Placeholder: I’m Ori. I design and build small software, often with coding agents, and keep the scope tight on purpose.</p>
+          <p>Based in New York. Prefer tools that stay on-device and quiet.</p>
+          <p>Email · GitHub — plain text links.</p>
+        </div>
+      </article>
+    </div>
+
+    <section aria-labelledby="si-mobile">
+      <h2 id="si-mobile" class="hub-eyebrow" style="margin:36px 0 12px">Mobile sketches</h2>
+      <div class="mobile-strip">
+        <div class="phone">
+          <span class="label">Home</span>
+          <div class="phone-inner">
+            <div class="ph ph-solid" style="height:48px">Name</div>
+            <div class="ph" style="height:40px">Signal</div>
+            <div class="ph" style="height:72px">Selected</div>
+            <div class="ph" style="height:56px">Elsewhere</div>
+            <div class="ph" style="height:28px">CTA</div>
+          </div>
+        </div>
+        <div class="phone">
+          <span class="label">Work</span>
+          <div class="phone-inner">
+            <div class="ph" style="height:16px">Back</div>
+            <div class="ph ph-solid" style="height:28px">Title</div>
+            <div class="ph" style="height:56px">Item</div>
+            <div class="ph" style="height:56px">Item</div>
+            <div class="ph" style="height:56px">Item</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
