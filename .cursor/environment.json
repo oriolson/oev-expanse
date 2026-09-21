@@ -1,0 +1,13 @@
+{
+  "name": "oev-expanse",
+  "terminals": [
+    {
+      "name": "static-server",
+      "command": "python3 -m http.server 8000",
+      "description": "Serves the repository's static microapps over HTTP at http://localhost:8000. The command runs from the repo root, so each project is reachable by its folder path, e.g. http://localhost:8000/pier-journal/index.html for the Pier Journal wireframe."
+    }
+  ],
+  "ports": [
+    { "name": "static-server", "port": 8000 }
+  ]
+}
