@@ -6,5 +6,6 @@ A hand-written personal website. Plain HTML and CSS, no dependencies. Hosted on 
 - `node scripts/build.mjs` writes `index.html` from the two. Commit the result.
 - Each work lives in `projects/<slug>/vN/`. Old versions are kept forever.
 - Add a line to `log.html` after every change.
-- Rules for agents and humans, and the per-session ritual: `CLAUDE.md`.
+- Rules for agents and humans, and the per-session ritual: `AGENTS.md`.
+- Deploys to https://oriolson.github.io/oev-expanse/ via the repo-root Pages workflow.
 - `explorations/` holds earlier index designs for reference.

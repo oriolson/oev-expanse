@@ -1,5 +1,7 @@
 // Generates index.html from src/index.html (template) and site.json (content). Zero dependencies.
-// Usage: node scripts/build.mjs
+// Usage: node scripts/build.mjs            build
+//        node scripts/build.mjs --check    build, then fail on errors (unknown kind/state, missing
+//                                          image files, broken version folders); blanks only warn.
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -15,13 +17,15 @@ const roman = (n) => { const m = [[10,"X"],[9,"IX"],[5,"V"],[4,"IV"],[1,"I"]]; l
 // An image or, when there is none, a hatched placeholder carrying a label.
 const picture = (src, alt, ratio, label, extra = "") => {
   if (src) {
-    if (!existsSync(resolve(root, src))) console.warn(`warning: image not found: ${src}`);
+    fail(!existsSync(resolve(root, src)), `image not found: ${src}`);
     return `<img class="${extra}" src="${esc(src)}" alt="${esc(alt)}" loading="lazy">`;
   }
   return `<span class="ph ${ratioClass(ratio)} ${extra}" data-label="${esc(label)}"></span>`;
 };
 
+const problems = [];
 const warn = (cond, msg) => { if (cond) console.warn(`warning: ${msg}`); };
+const fail = (cond, msg) => { if (cond) { problems.push(msg); console.error(`error: ${msg}`); } };
 
 // ---- now + contact
 const now = Object.entries(site.now).map(([k, v]) =>
@@ -49,8 +53,9 @@ for (const kind of site.kinds) {
   boardRows.push(`    <div class="ax y">${esc(kind)}</div>${cells.join("")}`);
 }
 for (const w of site.works) {
-  warn(!site.kinds.includes(w.kind), `${w.slug}: kind "${w.kind}" is not in kinds`);
-  warn(!site.states.includes(w.state), `${w.slug}: state "${w.state}" is not in states`);
+  fail(!site.kinds.includes(w.kind), `${w.slug}: kind "${w.kind}" is not in kinds`);
+  fail(!site.states.includes(w.state), `${w.slug}: state "${w.state}" is not in states`);
+  for (const v of w.versions || []) fail(!existsSync(resolve(root, `projects/${w.slug}/${v}/index.html`)), `${w.slug}: missing projects/${w.slug}/${v}/index.html`);
 }
 
 // ---- works: one entry each, newest first as listed in site.json
@@ -82,4 +87,7 @@ const slots = { title: esc(site.title), intro: esc(site.intro), now, contact, fr
 html = html.replace(/\{\{(\w+)\}\}/g, (_, k) => { if (!(k in slots)) throw new Error(`no slot for {{${k}}}`); return slots[k]; });
 
 writeFileSync(resolve(root, "index.html"), html);
+const blanks = (JSON.stringify(site).match(/______/g) || []).length;
+warn(blanks > 0, `${blanks} blank(s) "______" still to fill in site.json`);
 console.log(`index.html: ${site.works.length} work(s), ${(site.plates || []).length} loose plate(s), updated ${updated}`);
+if (process.argv.includes("--check") && problems.length) { console.error(`${problems.length} problem(s)`); process.exit(1); }

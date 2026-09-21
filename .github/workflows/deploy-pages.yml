@@ -26,13 +26,13 @@ jobs:
         with:
           node-version: 22
       - name: Build and validate site
-        run: node personal-site/build.js --check
+        run: node personal-site/scripts/build.mjs --check
       - uses: actions/configure-pages@v5
         with:
           enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: personal-site/dist
+          path: personal-site
 
   deploy:
     needs: build
