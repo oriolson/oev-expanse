@@ -83,8 +83,9 @@ static site generator such as Eleventy is straightforward.
 - **Visual archive view** — an alternate, image-led way to browse the same
   projects (each content file has a reserved optional `cover` field). Same data,
   different room.
-- **Public publishing** — hosting and domain are a separate step. Nothing here
-  assumes a host; the output is a folder of files.
+- **Custom domain** — the site deploys to GitHub Pages (see `README.md`), and
+  nothing in it assumes that host: all links are relative, so the same output
+  works from a subpath today and a custom domain later.
 
 ## Non-goals
 
