@@ -115,15 +115,36 @@ Non-negotiable, enforced by convention and by `--check`:
 
 ## Verification
 
-Before committing:
+Both layers are required before committing. `--check` proves the build is
+internally consistent; it says nothing about how pages look or feel to use.
 
-1. `node build.js --check` — must exit 0. It validates `publication` and `status`
-   values on every entry, required front matter and the no-`[MISSING: …]` rule on
-   published entries, internal links and media references (including posters and
-   covers) across all generated pages, image alt text, and video controls/posters.
-2. `node build.js --serve` and open http://localhost:8080/ — read the changed
-   pages; confirm navigation works from home → index → detail and back.
-3. If you touched `build.js`, spot-check the generated HTML in `dist/` for
+### Automated — `node build.js --check` (must exit 0)
+
+Verifies exactly:
+
+- `publication` and `status` values on every entry.
+- Required front matter and the no-`[MISSING: …]` rule on published entries.
+- Internal links and media references (src, poster, captions, cover) resolve to
+  real files across all generated pages.
+- Every `<img>` has alt text; every `<video>` has native controls and a poster.
+- No malformed `@video` directives rendered as text.
+
+It does NOT verify: layout at any width, keyboard behavior, focus visibility,
+reading order, color contrast, or the quality of alt text and captions. Those
+need eyes and hands.
+
+### Manual — `node build.js --serve`, then inspect changed pages
+
+1. **Desktop width (~1280px):** read every changed page; confirm navigation works
+   home → index → detail and back; text measure and media stay within the layout.
+2. **Mobile width (~375px, via responsive mode in browser dev tools):** no
+   horizontal scrolling; the project index table remains readable; images and
+   video scale down; tap targets are not cramped.
+3. **Keyboard walkthrough (no mouse):** press Tab from the top of each changed
+   page — the skip link appears first and jumps to main content; every link and
+   video control is reachable in a logical order with a visible focus outline;
+   Shift+Tab walks backwards; nothing traps focus.
+4. If you touched `build.js`, spot-check the generated HTML in `dist/` for
    well-formedness and the accessibility affordances listed above.
 
 ## Design constraints
