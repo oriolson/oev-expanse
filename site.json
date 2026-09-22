@@ -10,15 +10,28 @@
   "contact": {
     "email": "______@______",
     "links": [
-      { "label": "are.na", "url": "https://are.na/" }
+      {
+        "label": "are.na",
+        "url": "https://are.na/"
+      }
     ]
   },
   "frontispiece": {
     "image": null,
     "caption": "Frontispiece — ______, 2026. Photo by ______."
   },
-  "kinds": ["Product", "Tool", "Text", "Site"],
-  "states": ["Idea", "Making", "Shipped", "Resting"],
+  "kinds": [
+    "Product",
+    "Tool",
+    "Text",
+    "Site"
+  ],
+  "states": [
+    "Idea",
+    "Making",
+    "Shipped",
+    "Resting"
+  ],
   "works": [
     {
       "slug": "copilot-custom-models",
@@ -29,7 +42,13 @@
       "prose": "Helping enterprise admins choose training data and configure a custom model without becoming training experts. I led design from limited-beta refinements to explorations for a more guided setup. A working account of the whole flow and the smaller decisions within it.",
       "image": "assets/plates/copilot-custom-models-v2/configuration.png",
       "caption": "2024, custom model configuration. Beta design, cropped.",
-      "versions": ["v1", "v2"]
+      "versions": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5"
+      ]
     },
     {
       "slug": "this-website",
@@ -40,20 +59,55 @@
       "prose": "This site, an index of works, always in progress. It began as a table on ruled paper, then a chart, then a manuscript. Now it is a manuscript with plates: the pictures do the first telling and the text does the second.",
       "image": null,
       "caption": "2026 Sept, this index, v1",
-      "versions": ["v1"]
+      "versions": [
+        "v1"
+      ]
     }
   ],
   "ideas": [
-    { "title": "untitled idea", "kind": "Product" },
-    { "title": "untitled idea", "kind": "Product" },
-    { "title": "untitled idea", "kind": "Tool" }
+    {
+      "title": "untitled idea",
+      "kind": "Product"
+    },
+    {
+      "title": "untitled idea",
+      "kind": "Product"
+    },
+    {
+      "title": "untitled idea",
+      "kind": "Tool"
+    }
   ],
   "plates": [
-    { "image": null, "ratio": "3:2", "caption": "2026 Sept, sketch" },
-    { "image": null, "ratio": "3:4", "caption": "2026 Sept, screenshot" },
-    { "image": null, "ratio": "1:1", "caption": "2026 Sept, seen in ______" },
-    { "image": null, "ratio": "4:3", "caption": "2026 Sept, detail" },
-    { "image": null, "ratio": "3:2", "caption": "2026 Sept, notebook" },
-    { "image": null, "ratio": "1:1", "caption": "2026 Sept, ______" }
+    {
+      "image": null,
+      "ratio": "3:2",
+      "caption": "2026 Sept, sketch"
+    },
+    {
+      "image": null,
+      "ratio": "3:4",
+      "caption": "2026 Sept, screenshot"
+    },
+    {
+      "image": null,
+      "ratio": "1:1",
+      "caption": "2026 Sept, seen in ______"
+    },
+    {
+      "image": null,
+      "ratio": "4:3",
+      "caption": "2026 Sept, detail"
+    },
+    {
+      "image": null,
+      "ratio": "3:2",
+      "caption": "2026 Sept, notebook"
+    },
+    {
+      "image": null,
+      "ratio": "1:1",
+      "caption": "2026 Sept, ______"
+    }
   ]
 }

@@ -1,0 +1,119 @@
+:root {
+  color-scheme: light;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #111;
+  background: #fff;
+  --label-font: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+a, a:visited { color: #0000ff; }
+a:focus-visible { outline: 2px solid #0000ff; outline-offset: 5px; }
+p { margin: 0 0 1.2rem; }
+h1, h2 { font-size: 1rem; line-height: 1.5; margin: 0 0 1rem; }
+h1 { font-weight: bold; }
+h2 { font-family: var(--label-font); font-weight: normal; text-transform: uppercase; }
+mark { color: #000; background: #ffff00; }
+ol { margin: 0; padding: 0; list-style: none; }
+
+.manuscript {
+  max-width: 68em;
+  margin: 0 auto;
+  padding: 3rem 24px 5rem;
+}
+
+.back { margin-bottom: 3.5rem; }
+.label {
+  font: 0.72rem/1.5 var(--label-font);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* Two columns for the whole telling: margin on the left, body on the right. */
+.telling {
+  display: grid;
+  grid-template-columns: 13em minmax(0, 1fr);
+  gap: 3rem;
+  align-items: start;
+}
+.body { min-width: 0; }
+
+.context { font-size: 0.85rem; }
+.context p { margin-bottom: 0.9rem; }
+
+.contents {
+  position: sticky;
+  top: 2rem;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+}
+.contents .label { color: #555; margin-bottom: 0.4rem; }
+.contents li { margin: 0 0 0.35rem; }
+.contents a { color: #777; text-decoration: none; }
+.contents a[aria-current="true"] { color: #111; }
+.contents a:hover { color: #0000ff; text-decoration: underline; }
+
+.project-header { margin-bottom: 3rem; max-width: 46em; }
+.opening { max-width: 30em; }
+.note { font-size: 0.83rem; color: #555; }
+
+.prose { max-width: 46em; margin: 0 0 2.5rem; }
+blockquote { margin: 0 0 1.2rem; padding-left: 1rem; border-left: 1px solid #111; }
+blockquote.thesis { font-size: 1.2rem; line-height: 1.4; padding-left: 0; border: 0; margin: 0 0 1.5rem; }
+
+.plate { margin: 0 0 4rem; }
+
+/* Stage: a flat grey ground behind every screenshot. Every plate is shown at
+   one width so the beta card and the GA steps can be compared directly. */
+.stage {
+  background: #f2f2f2;
+  padding: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+.image-link { display: block; position: relative; max-width: 808px; width: 100%; }
+.image-link img { display: block; width: 100%; height: auto; border: 1px solid #d8d8d8; }
+.template-options img, .stage img[src*="setup-"] { border: none; }
+
+/* Mark: a yellow box drawn on the page over an untouched image. */
+.mark {
+  position: absolute;
+  border: 3px solid #ffff00;
+  pointer-events: none;
+}
+
+.template-options { gap: 1.5rem; flex-wrap: wrap; }
+.template-options .image-link { flex: 1 1 0; width: auto; max-width: 410px; }
+
+figcaption {
+  display: grid;
+  grid-template-columns: 13em minmax(0, 1fr);
+  gap: 3rem;
+  margin-top: 1rem;
+  font-size: 0.83rem;
+  color: #555;
+}
+
+.closing { padding-top: 1.5rem; border-top: 1px solid #ddd; margin-bottom: 0; }
+.versions { font: 0.8rem/1.5 var(--label-font); margin: 2.5rem 0 0; }
+
+@media (max-width: 760px) {
+  .manuscript { padding: 1.5rem 20px 3rem; }
+  .back { margin-bottom: 2.5rem; }
+  .telling { grid-template-columns: 1fr; gap: 1.5rem; }
+  .contents { display: none; }
+  .context p { margin-bottom: 0.4rem; }
+  .context br { display: none; }
+  .prose { margin-bottom: 2rem; }
+  figcaption { grid-template-columns: 1fr; gap: 0.4rem; }
+  .plate { margin-bottom: 3rem; }
+  .stage { padding: 1rem; }
+  .mark { border-width: 2px; }
+}

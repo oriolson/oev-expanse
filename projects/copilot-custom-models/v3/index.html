@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ori Olson's design work on Copilot custom models: choosing training data, setting expectations, and exploring guided starting points.">
+  <title>Copilot custom models, v3 — Ori Olson</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="manuscript">
+  <p class="back"><a href="../../../index.html#copilot-custom-models">Back to Digital Expanse</a></p>
+
+  <article aria-labelledby="project-title">
+    <header class="project-header">
+      <div class="context">
+        <p class="label">2024 / GitHub</p>
+        <p>Lead product designer</p>
+        <p>With product management,<br> engineering, and design peers</p>
+        <p class="label"><mark>Working draft / v3</mark></p>
+      </div>
+      <div>
+        <h1 id="project-title">Copilot custom models</h1>
+        <p class="opening">Helping enterprise admins choose what a model learns from, without becoming training experts.</p>
+        <p>I led design end to end, from the limited-beta refinements through the design for general availability.</p>
+      </div>
+    </header>
+
+    <figure class="plate hero">
+      <div class="stage">
+        <a class="image-link" href="../../../assets/plates/copilot-custom-models-v3/beta-configuration.png" aria-label="Open the beta configuration screen at full size">
+          <img src="../../../assets/plates/copilot-custom-models-v3/beta-configuration.png" width="2000" height="1283" fetchpriority="high" alt="The complete organization settings page. Custom models sits in the Copilot section of the settings sidebar, marked Beta. The screen holds repository selection, file-extension targeting, a prompts-and-suggestions toggle, a training-time banner, and the create-model button.">
+        </a>
+      </div>
+      <figcaption>
+        <span class="label">01 / Beta design / June 2024</span>
+        <span>Where an admin would find it: inside organization settings, under Copilot. From the design file; the pink marker is a review annotation and the email address is a placeholder. <a href="../../../assets/plates/copilot-custom-models-v3/beta-configuration.png">Open full size</a>.</span>
+      </figcaption>
+    </figure>
+
+    <section class="prose" aria-labelledby="work-title">
+      <h2 id="work-title">~ The whole experience</h2>
+      <p>The difficult questions came before training started: which data to use, and which controls an admin actually had over it.</p>
+      <p>The configuration design brings those first decisions together. Admins could select repositories, narrow the files included, and choose whether to include collected prompts and suggestions before starting training.</p>
+      <p>In June 2024 this screen went to limited beta, with refinements I made to its controls and their copy.</p>
+    </section>
+
+    <section class="prose" aria-labelledby="detail-title">
+      <h2 id="detail-title">~ Explaining the wait</h2>
+      <p>We did not have a reliable completion estimate. Instead of offering false precision, the banner at the foot of the configuration screen explained what affected training time and how people would know it was finished:</p>
+      <blockquote>Training time is based on the amount of data selected and can take a couple of days for large data sets. We’ll notify you at {your@email.com} when training is complete.</blockquote>
+      <p class="note">Original design copy, email placeholder included. It describes the intended communication, not a measured training duration.</p>
+    </section>
+
+    <section class="prose" aria-labelledby="scope-title">
+      <h2 id="scope-title">~ Two decisions, not one</h2>
+      <p>Another important distinction was between permission to collect data at the organization level and the choice to include that data in an individual model. The inclusion control in the configuration screen addresses the second decision; it does not replace the organization policy.</p>
+      <p>Keeping those scopes separate mattered as much as the control itself. So did smaller details, like making the file-extension tokens consistent with Primer.</p>
+    </section>
+
+    <section class="prose" aria-labelledby="exploration-title">
+      <h2 id="exploration-title">~ A starting point, not a blank slate</h2>
+      <p>I explored suggested models as a way to help admins begin with a broad or more focused data set, then review it before training. Templates, repository guidance, and guided onboarding were later directions, not confirmed shipped features.</p>
+    </section>
+
+    <figure class="plate exploration">
+      <div class="stage template-options">
+        <a class="image-link" href="../../../assets/plates/copilot-custom-models-v2/template-general.png" aria-label="Open the general-purpose model exploration at full size">
+          <img src="../../../assets/plates/copilot-custom-models-v2/template-general.png" width="410" height="164" loading="lazy" alt="General Purpose Model suggestion: include suggested repositories for shared practices across projects, with a Review action.">
+        </a>
+        <a class="image-link" href="../../../assets/plates/copilot-custom-models-v2/template-focused.png" aria-label="Open the web-development model exploration at full size">
+          <img src="../../../assets/plates/copilot-custom-models-v2/template-focused.png" width="410" height="164" loading="lazy" alt="Web Development Model suggestion: use a separate model for a particular context or division, with a Review action.">
+        </a>
+      </div>
+      <figcaption>
+        <span class="label">03 / Exploration / Not confirmed shipped</span>
+        <span>A broad or focused starting point, reviewed before training. Two crops from the suggested-starting-points exploration; data sizes and repository counts are illustrative.</span>
+      </figcaption>
+    </figure>
+
+    <section class="prose" id="configuration-setup" aria-labelledby="setup-title">
+      <h2 id="setup-title">~ From a starting point to training data</h2>
+      <p>A suggested starting point still needs a way to make the data choices explicit. The design for general availability took that work out of the settings card and gave it a page of its own, in two steps: choosing data sources, then specifying languages.</p>
+      <p>The repository options make different approaches visible: include everything, select manually, use recent activity, or filter by property. The language step adds feedback about coverage before continuing, bringing guidance into the decision rather than leaving it in documentation.</p>
+    </section>
+
+    <figure class="plate setup">
+      <div class="stage">
+      <a class="image-link" href="../../../assets/plates/copilot-custom-models-v3/training-data-setup-2x.png" aria-label="Inspect the training-data setup screen at full resolution">
+        <img src="../../../assets/plates/copilot-custom-models-v3/training-data-setup.png" srcset="../../../assets/plates/copilot-custom-models-v3/training-data-setup.png 1440w, ../../../assets/plates/copilot-custom-models-v3/training-data-setup-2x.png 2880w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1224px) calc(100vw - 48px), 1176px" width="1440" height="1418" loading="lazy" alt="The New fine-tuned model screen, a page of its own rather than a settings card. Step one, choose data sources: a developer-telemetry toggle and four repository options, with repositories active in the last six months selected. Step two, specify languages: a language filter, detected languages offered as additions, and coverage feedback before validating and continuing.">
+      </a>
+      </div>
+      <figcaption>
+        <span class="label">04 / General availability design / Not shipped</span>
+        <span>The same decisions, given their own page and broken into two steps. Original draft copy retained: “x% improvement” is an unfilled placeholder, not a measured result; the counts are illustrative. <a href="../../../assets/plates/copilot-custom-models-v3/training-data-setup-2x.png">Inspect full resolution</a> — 2880 × 2836, exported at 2× — to read the detail.</span>
+      </figcaption>
+    </figure>
+
+    <footer class="prose closing">
+      <h2>~ In perspective</h2>
+      <p>The preview was retired before general availability, so the second design never reached anyone. What the two plates show, side by side, is the direction of travel: the same decisions moving out of a settings card and into a place of their own, with the guidance brought alongside them.</p>
+      <p>What I would carry forward is the shape of the problem. The hard part was never the training controls. It was helping an admin make a data decision they could explain to their own team, and knowing when to say what we did not yet know.</p>
+      <p class="versions">Earlier tellings: <a href="../v1/index.html">v1</a> · <a href="../v2/index.html">v2</a> · <a href="../../../index.html#copilot-custom-models">Back to Works</a></p>
+    </footer>
+  </article>
+</main>
+</body>
+</html>

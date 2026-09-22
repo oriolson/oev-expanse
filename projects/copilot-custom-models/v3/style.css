@@ -1,0 +1,103 @@
+:root {
+  color-scheme: light;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #111;
+  background: #fff;
+  --label-font: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+a, a:visited { color: #0000ff; }
+a:focus-visible { outline: 2px solid #0000ff; outline-offset: 5px; }
+p { margin: 0 0 1.2rem; }
+h1, h2 { font-size: 1rem; line-height: 1.5; margin: 0 0 1rem; }
+h1 { font-weight: bold; }
+h2 { font-family: var(--label-font); font-weight: normal; text-transform: uppercase; }
+mark { color: #000; background: #ffff00; }
+
+.manuscript {
+  max-width: 68em;
+  margin: 0 auto;
+  padding: 3rem 24px 5rem;
+}
+
+.back { margin-bottom: 3.5rem; }
+.label {
+  font: 0.72rem/1.5 var(--label-font);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.project-header {
+  display: grid;
+  grid-template-columns: 13em minmax(0, 1fr);
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.project-header > div { min-width: 0; }
+.context { font-size: 0.85rem; }
+.context p { margin-bottom: 0.9rem; }
+.opening { max-width: 30em; }
+.prose { max-width: 46em; margin: 0 0 3rem auto; }
+.plate { margin: 0 0 4rem; }
+
+.image-link { display: block; }
+.image-link img { display: block; width: 100%; height: auto; }
+.hero { margin-bottom: 3.5rem; }
+
+/* Stage: a flat grey ground behind every screenshot. Images sit at their
+   natural size when the stage is wider than they are. */
+.stage {
+  background: #f2f2f2;
+  padding: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+.stage .image-link { max-width: 100%; }
+.stage img { border: 1px solid #d8d8d8; }
+.hero .stage img { border: none; }
+.hero .stage { padding: 2.5rem 2.5rem 0; }
+.hero .stage .image-link { border: 1px solid #d8d8d8; border-bottom: none; }
+
+figcaption {
+  display: grid;
+  grid-template-columns: 13em minmax(0, 1fr);
+  gap: 3rem;
+  margin-top: 1rem;
+  font-size: 0.83rem;
+  color: #555;
+}
+
+blockquote { margin: 0 0 1.2rem; padding-left: 1rem; border-left: 1px solid #111; }
+.note { font-size: 0.83rem; color: #555; }
+.template-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 410px));
+  gap: 1.5rem;
+  justify-content: center;
+}
+.template-options img, .setup img { border: none; }
+.setup .image-link { cursor: zoom-in; }
+.closing { padding-top: 1.5rem; border-top: 1px solid #ddd; margin-bottom: 0; }
+.versions { font: 0.8rem/1.5 var(--label-font); margin: 2.5rem 0 0; }
+
+@media (max-width: 760px) {
+  .manuscript { padding: 1.5rem 20px 3rem; }
+  .back { margin-bottom: 2.5rem; }
+  .project-header { grid-template-columns: 1fr; gap: 1.5rem; }
+  .context p { margin-bottom: 0.4rem; }
+  .context br { display: none; }
+  .prose { margin-bottom: 2.5rem; }
+  figcaption { grid-template-columns: 1fr; gap: 0.4rem; }
+  .plate { margin-bottom: 3rem; }
+  .stage { padding: 1.25rem; }
+  .hero .stage { padding: 1.25rem 1.25rem 0; }
+}
+
+@media (max-width: 600px) {
+  .template-options { grid-template-columns: minmax(0, 410px); }
+}

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ori Olson's design work on Copilot custom models: a page that turns two data decisions into two steps, and the settings card it grew out of.">
+  <title>Copilot custom models, v5 — Ori Olson</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="manuscript">
+  <p class="back"><a href="../../../index.html#copilot-custom-models">Back to Digital Expanse</a></p>
+
+  <article class="telling">
+    <aside class="margin">
+      <div class="context">
+        <p class="label">2024 / GitHub</p>
+        <p>Lead product designer</p>
+        <p>With product management,<br> engineering, and design peers</p>
+        <p class="label"><mark>Working draft / v5</mark></p>
+      </div>
+      <nav class="contents" aria-label="Contents">
+        <p class="label">Contents</p>
+        <ol>
+          <li><a href="#page">A page of its own</a></li>
+          <li><a href="#two">Two decisions, not one</a></li>
+          <li><a href="#sources">Choosing sources</a></li>
+          <li><a href="#guidance">Guidance in the decision</a></li>
+          <li><a href="#before">Where it began</a></li>
+          <li><a href="#start">A starting point</a></li>
+          <li><a href="#after">In perspective</a></li>
+        </ol>
+      </nav>
+    </aside>
+
+    <div class="body">
+      <header class="project-header">
+        <h1 id="project-title">Copilot custom models</h1>
+        <p class="opening">Helping enterprise admins choose what a model learns from, without becoming training experts.</p>
+        <p>I led design end to end, from the limited-beta refinements through the design for general availability. The preview was retired before that design shipped.</p>
+        <p class="note">Every picture here is from the design file, not the product. Placeholder copy, review marks and illustrative counts are left in on purpose.</p>
+      </header>
+
+      <section class="prose" id="page" aria-labelledby="page-title">
+        <h2 id="page-title">A page of its own</h2>
+        <p>Training a model on your organization’s code is a data decision before it is anything else. The design for general availability gives that decision a page of its own, in two steps: choose the sources, then narrow by language. Everything an admin needs to decide is on the page, and the page tells them when a choice will not work.</p>
+      </section>
+
+      <figure class="plate">
+          <a class="image-link" href="../../../assets/plates/copilot-custom-models-v3/training-data-setup-2x.png" aria-label="Open the full GA page at full resolution">
+            <img src="../../../assets/plates/copilot-custom-models-v3/training-data-setup.png" srcset="../../../assets/plates/copilot-custom-models-v3/training-data-setup.png 1440w, ../../../assets/plates/copilot-custom-models-v3/training-data-setup-2x.png 2880w" sizes="(max-width: 760px) calc(100vw - 72px), 808px" width="1440" height="1418" fetchpriority="high" alt="The New fine-tuned model page. Step one, Choose data sources: a developer-telemetry toggle and four repository options. Step two, Specify languages: a language filter, detected languages, and a coverage note before Validate and continue.">
+          </a>
+        <figcaption><span class="num">01</span> Two steps, one page, nothing else competing for the eye. The details below are cut from this frame.</figcaption>
+      </figure>
+
+      <section class="prose" id="two" aria-labelledby="two-title">
+        <h2 id="two-title">Two decisions, not one</h2>
+        <blockquote class="thesis">Permission to collect data is one decision. Using that data to train a model is another.</blockquote>
+        <p>The organization policy decides whether developer telemetry is collected at all. The control at the top of step one decides whether this model learns from it. Keeping those two scopes apart matters more than any other control on the page, so the choice gets the first position, its own explanation, and a tip that says why you might want it.</p>
+      </section>
+
+      <figure class="plate">
+          <a class="image-link" href="../../../assets/plates/copilot-custom-models-v3/training-data-setup-2x.png" aria-label="Open the full GA page at full resolution">
+            <img src="../../../assets/plates/copilot-custom-models-v4/setup-sources-2x.png" width="1616" height="1594" loading="lazy" alt="Step one, with the Include data from developer telemetry control and its tip marked.">
+            <span class="mark" style="left:7.4%; top:25%; width:90.2%; height:17%" aria-hidden="true"></span>
+          </a>
+        <figcaption><span class="num">02</span> Telemetry is a separate choice with its own reason attached. The “x%” in the tip is an unfilled placeholder.</figcaption>
+      </figure>
+
+      <section class="prose" id="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">Choosing sources</h2>
+        <p>Most admins do not know which repositories make a good model. Step one lays the four ways to choose side by side, so the trade-off is visible instead of implied: everything, a hand-picked list, whatever has been active lately, or a filter by property. Recent activity is the default, and a link shows what it would include before you commit.</p>
+      </section>
+
+      <figure class="plate">
+          <a class="image-link" href="../../../assets/plates/copilot-custom-models-v3/training-data-setup-2x.png" aria-label="Open the full GA page at full resolution">
+            <img src="../../../assets/plates/copilot-custom-models-v4/setup-sources-2x.png" width="1616" height="1594" loading="lazy" alt="Step one, with the four repository options marked: all repositories, select repositories, repositories with high activity in the last six months (selected), and filter repositories.">
+          </a>
+        <figcaption><span class="num">03</span> Radio buttons, not a dropdown, because the options are the explanation.</figcaption>
+      </figure>
+
+      <section class="prose" id="guidance" aria-labelledby="guidance-title">
+        <h2 id="guidance-title">Guidance in the decision</h2>
+        <p>Step two narrows by language. Detected languages are offered as additions, and when a filter leaves too little to learn from, the page says so before you continue. The guidance lives in the decision, not in documentation.</p>
+        <p>This idea has an ancestor. The beta card had no reliable training estimate, so rather than offer a number we could not stand behind, its banner said what the wait depended on and how you would know it was done:</p>
+        <blockquote>Training time is based on the amount of data selected and can take a couple of days for large data sets. We’ll notify you at {your@email.com} when training is complete.</blockquote>
+        <p>The coverage message is the same instinct, moved earlier: tell people what they need to know at the moment they can still act on it.</p>
+      </section>
+
+      <figure class="plate">
+          <a class="image-link" href="../../../assets/plates/copilot-custom-models-v3/training-data-setup-2x.png" aria-label="Open the full GA page at full resolution">
+            <img src="../../../assets/plates/copilot-custom-models-v4/setup-languages-2x.png" width="1616" height="830" loading="lazy" alt="Step two, with the coverage note marked: only three repositories contain significant JavaScript code; consider expanding the language filter.">
+          </a>
+        <figcaption><span class="num">04</span> Feedback before you commit, in the place where you commit.</figcaption>
+      </figure>
+
+      <section class="prose" id="before" aria-labelledby="before-title">
+        <h2 id="before-title">Where it began</h2>
+        <p>These decisions did not start with a page. In June 2024 they went to limited beta as one card inside <a href="../../../assets/plates/copilot-custom-models-v3/beta-configuration.png">organization settings</a>, under Copilot, with refinements I made to its controls and their copy. Repositories, file extensions and the prompts toggle sat in one box, and the second decision read as one more field.</p>
+      </section>
+
+      <figure class="plate">
+          <a class="image-link" href="../../../assets/plates/copilot-custom-models-v4/beta-card.png" aria-label="Open the beta card at full size">
+            <img src="../../../assets/plates/copilot-custom-models-v4/beta-card.png" width="1388" height="920" loading="lazy" alt="The beta Create a new custom model card: repository selection, file-extension tokens, an Include prompts and suggestions toggle, the training-time banner, and a Create button.">
+            <span class="mark" style="left:1.7%; top:58%; width:96.6%; height:18.4%" aria-hidden="true"></span>
+          </a>
+        <figcaption><span class="num">05</span> Same decisions, one box. The marked section became the first control on the GA page.</figcaption>
+      </figure>
+
+      <section class="prose" id="start" aria-labelledby="start-title">
+        <h2 id="start-title">A starting point, not a blank slate</h2>
+        <p>Between the two, I explored suggested starting points: a broad model from shared code, or a focused one for a division, each reviewed before training. These stayed explorations, but the instinct behind them, that admins should begin from a sensible default rather than a blank form, is what became the recent-activity default in step one.</p>
+      </section>
+
+      <figure class="plate">
+        <div class="template-options">
+          <a class="image-link" href="../../../assets/plates/copilot-custom-models-v2/template-general.png" aria-label="Open the general-purpose suggestion at full size">
+            <img src="../../../assets/plates/copilot-custom-models-v2/template-general.png" width="410" height="164" loading="lazy" alt="General Purpose Model suggestion: all suggested repositories, 10 GB across 38 repositories, with a Review button.">
+          </a>
+          <a class="image-link" href="../../../assets/plates/copilot-custom-models-v2/template-focused.png" aria-label="Open the focused suggestion at full size">
+            <img src="../../../assets/plates/copilot-custom-models-v2/template-focused.png" width="410" height="164" loading="lazy" alt="Web Development Model suggestion: a separate model for one division, 5 GB across 7 repositories, with a Review button.">
+          </a>
+        <figcaption><span class="num">06</span> Broad or focused. The shape of the choice is the point.</figcaption>
+      </figure>
+
+      <footer class="prose closing" id="after">
+        <h2>In perspective</h2>
+        <p>The preview was retired before general availability, so the page never reached anyone. What the work shows is the direction of travel: the same decisions moving out of a settings card and into a place of their own, with the guidance brought alongside.</p>
+        <p>What I would carry forward is the shape of the problem. The hard part was never the training controls. It was helping an admin make a data decision they could explain to their own team, and knowing when to say what we did not yet know.</p>
+        <p class="versions">Earlier tellings: <a href="../v1/index.html">v1</a> · <a href="../v2/index.html">v2</a> · <a href="../v3/index.html">v3</a> · <a href="../v4/index.html">v4</a> · <a href="../../../index.html#copilot-custom-models">Back to Works</a></p>
+      </footer>
+    </div>
+  </article>
+</main>
+<script src="contents.js"></script>
+</body>
+</html>

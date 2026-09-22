@@ -1,0 +1,90 @@
+/* Work pages have their own look: one system sans, a real type scale, plates
+   on white. The index keeps the manuscript. See AGENTS.md, design decisions. */
+:root {
+  color-scheme: light;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.6;
+  color: #111;
+  background: #fff;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+a, a:visited { color: #0000ff; }
+a:focus-visible { outline: 2px solid #0000ff; outline-offset: 5px; }
+p { margin: 0 0 1.25rem; }
+mark { color: #000; background: #ffff00; }
+ol { margin: 0; padding: 0; list-style: none; }
+
+h1 { font-size: 1.6rem; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 1.25rem; }
+h2 {
+  font-size: 1rem; line-height: 1.5; font-weight: 600; margin: 0 0 1rem;
+  display: flex; align-items: center; gap: 1.25rem;
+}
+h2::after { content: ""; flex: 1; border-top: 1px solid #e6e6e6; }
+h2.visually-hidden { display: block; }
+
+.manuscript { max-width: 72em; margin: 0 auto; padding: 3.5rem 32px 6rem; }
+.back { font-size: 0.85rem; margin-bottom: 4rem; }
+.label { font-size: 0.78rem; color: #666; }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.telling {
+  display: grid;
+  grid-template-columns: 12em minmax(0, 1fr);
+  gap: 4rem;
+  align-items: start;
+}
+.body { min-width: 0; }
+
+.context { font-size: 0.85rem; color: #444; }
+.context p { margin-bottom: 0.6rem; }
+.context .label { color: #666; }
+
+.contents { position: sticky; top: 2rem; margin-top: 3.5rem; font-size: 0.85rem; }
+.contents .label { margin-bottom: 0.5rem; }
+.contents li { margin: 0 0 0.45rem; }
+.contents a { color: #999; text-decoration: none; }
+.contents a[aria-current="true"] { color: #111; }
+.contents a:hover { color: #0000ff; text-decoration: underline; }
+
+.project-header { margin-bottom: 4.5rem; max-width: 34em; }
+.opening { font-size: 1.15rem; line-height: 1.5; }
+.note { font-size: 0.85rem; color: #666; }
+
+.prose { max-width: 34em; margin: 0 0 3rem; }
+blockquote { margin: 0 0 1.25rem; padding-left: 1.1rem; border-left: 2px solid #ddd; color: #444; }
+blockquote.thesis { font-size: 1.25rem; line-height: 1.4; padding: 0; border: 0; color: #111; font-weight: 500; margin: 0 0 1.5rem; }
+
+/* Plates: the frame is the object. Full body column, hairline, white page. */
+.plate { margin: 0 0 6rem; }
+.image-link { display: block; position: relative; }
+.image-link img { display: block; width: 100%; height: auto; border: 1px solid #e2e2e2; }
+.template-options { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.template-options .image-link { flex: 0 1 410px; }
+.template-options img { border: none; }
+
+.mark { position: absolute; border: 2px solid #ffff00; pointer-events: none; }
+
+figcaption { margin-top: 1rem; font-size: 0.85rem; line-height: 1.5; color: #666; max-width: 40em; }
+figcaption .num { color: #999; font-variant-numeric: tabular-nums; margin-right: 0.5rem; }
+
+.closing { padding-top: 2rem; border-top: 1px solid #e6e6e6; margin-bottom: 0; }
+.versions { font-size: 0.8rem; color: #666; margin: 3rem 0 0; }
+
+@media (max-width: 760px) {
+  :root { font-size: 17px; }
+  .manuscript { padding: 1.5rem 20px 3rem; }
+  .back { margin-bottom: 2.5rem; }
+  .telling { grid-template-columns: 1fr; gap: 1.5rem; }
+  .contents { display: none; }
+  .context p { margin-bottom: 0.3rem; }
+  .context br { display: none; }
+  .project-header { margin-bottom: 3rem; }
+  .prose { margin-bottom: 2rem; }
+  .plate { margin-bottom: 3.5rem; }
+}

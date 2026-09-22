@@ -1,19 +1,31 @@
+/* Shared base for log.html and colophon.html. Matches the index and the work
+   pages: one system sans, a small type scale, plates on white. */
 html, body {
-  font-family: "Arial Narrow", "Helvetica Neue Condensed", "Arial", sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
-  margin: 0 8px;
-  color: #000;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.6;
+  margin: 0;
+  color: #111;
   background: #fff;
 }
+body { max-width: 42em; padding: 3.5rem 32px 6rem; }
 a { color: #0000ff; text-decoration: none; }
-a:hover { color: #000; background: #fff; text-decoration: underline; }
-h1, h2, h3 { font-size: 1em; font-weight: normal; text-transform: uppercase; margin: 2em 0 0.25em; }
+a:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid #0000ff; outline-offset: 4px; }
+p { margin: 0 0 1.25rem; }
+h1, h2, h3 {
+  font-size: 1rem; line-height: 1.5; font-weight: 600; margin: 3rem 0 1rem;
+  display: flex; align-items: center; gap: 1.25rem;
+}
+h1::after, h2::after, h3::after { content: ""; flex: 1; border-top: 1px solid #e6e6e6; }
+ul { margin: 0 0 1.25rem; padding-left: 1.2em; }
+li { margin-bottom: 0.6rem; }
 .hl-green { background: #00ff00; color: #000; }
 .hl-blue { background: #0000ff; color: #fff; }
 .hl-yellow { background: #ffff00; color: #000; }
-table { border-collapse: collapse; margin: 1em 0; }
-th, td { border: 1px solid #000; padding: 0.35em 0.6em; vertical-align: top; text-align: left; }
-th { font-weight: normal; text-transform: uppercase; }
-.foot { font-size: 12px; margin: 3em 0 1em; }
-figcaption { font-size: 0.75em; text-transform: uppercase; margin-top: 0.35em; }
+table { border-collapse: collapse; margin: 1.25rem 0; font-size: 0.85rem; }
+th, td { border: 1px solid #ddd; padding: 0.45em 0.7em; vertical-align: top; text-align: left; }
+th { font-weight: 600; }
+.foot { font-size: 0.8rem; color: #666; margin: 4rem 0 1rem; }
+figcaption { font-size: 0.8rem; line-height: 1.5; color: #666; margin-top: 0.6em; }
+@media (max-width: 760px) { html, body { font-size: 17px; } body { padding: 1.5rem 20px 3rem; } }
