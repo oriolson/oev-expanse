@@ -81,6 +81,8 @@ My website is a ______. (Owner fills this in. Until then, treat the site as
   Now margin retained, chart repurposed as a state board (Idea → Making → Shipped → Resting)
   because there is no archive yet, and visuals expected of a product designer's home page.
 - 2026-09-21 Board rows (kinds) are Product, Tool, Text, Site. Provisional; owner may rename.
+- 2026-09-21 Custom models begins with original, labeled concept illustrations, not private source exports or a replica of shipped UI. Its Resting state describes the retired preview; the story is a working draft. Keep beta refinements separate from unshipped explorations and do not add unsupported impact claims.
+- 2026-09-21 Custom models v2 leads with owner-selected Figma design crops rather than the conceptual demo. Keep source files and internal annotations out; remove account chrome by cropping, retain original UI copy, and label draft artifacts and illustrative data. Split template crops on phones; link images to full-size assets. v1 remains unchanged. Publication is still a separate approval.
 
 ## Adding a work (checklist)
 1. `mkdir -p projects/<slug>/v1` and write its `index.html` (link back to `../../../index.html`).

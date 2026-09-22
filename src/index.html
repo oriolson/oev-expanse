@@ -41,6 +41,7 @@ button:hover { background: var(--ink); color: #fff; }
 }
 .r32 { aspect-ratio: 3 / 2; } .r43 { aspect-ratio: 4 / 3; } .r11 { aspect-ratio: 1 / 1; } .r219 { aspect-ratio: 21 / 9; } .r34 { aspect-ratio: 3 / 4; }
 figure { margin: 0; }
+figure > img { display: block; width: 100%; height: auto; }
 figcaption { font-family: "Arial Narrow", Arial, sans-serif; font-size: 11px; text-transform: uppercase; color: var(--dim); margin-top: 0.4em; letter-spacing: 0.03em; }
 
 /* ---------- body ---------- */
@@ -57,6 +58,8 @@ main > p { margin: 0 0 1.5rem; }
 .board .ax.y { display: flex; align-items: center; }
 .board .cell { display: flex; flex-wrap: wrap; gap: 0.35em; align-content: flex-start; }
 .board .cell a { display: block; width: 2.6em; }
+.board .cell img { display: block; width: 100%; height: auto; object-fit: contain; border: 1px solid #ccc; box-sizing: border-box; }
+.board .cell a:is(:hover, :focus-visible) img { outline: 2px solid var(--mark); }
 .board .cell .ph { border-color: #ccc; }
 .board .cell .ph::after { content: none; }
 .board .cell a:hover .ph { outline: 2px solid var(--mark); }

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ori Olson on designing GitHub Copilot custom models: beta refinements, training guidance, and the distinction between collecting data and including it in a model.">
+    <title>Copilot custom models — Ori Olson</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="manuscript">
+      <header class="page-header">
+        <a href="../../../index.html#copilot-custom-models">Back to Digital Expanse</a>
+      </header>
+
+      <main id="main">
+        <article aria-labelledby="project-title">
+          <header class="project-header">
+            <p class="label draft"><mark>Working draft</mark></p>
+            <h1 id="project-title">Copilot custom models</h1>
+            <p class="opening">Making the decisions around a custom model understandable—not just the act of starting training.</p>
+          </header>
+
+          <section aria-labelledby="problem-title">
+            <h2 id="problem-title">~ The work</h2>
+            <p>I led design end to end for Copilot custom models, working with a PM and engineers and incorporating internal design feedback. The difficult questions extended beyond configuration: which data to train on, which levers were available, and how teams might monitor and adjust a model after developers began using it.</p>
+            <p>I approached this as a connected journey. Training guidance mattered as much as the controls themselves.</p>
+          </section>
+
+          <figure class="journey">
+            <figcaption class="label">Conceptual map — not shipped screens</figcaption>
+            <ol class="journey-steps">
+              <li><span>Choose data</span><small>What belongs?</small></li>
+              <li><span>Configure</span><small>What can change?</small></li>
+              <li><span>Train</span><small>What happens next?</small></li>
+              <li><span>Observe</span><small>What needs adjusting?</small></li>
+            </ol>
+            <p class="figure-note">A map of the intended experience, including monitoring explored beyond setup.</p>
+          </figure>
+
+          <section aria-labelledby="boundary-title">
+            <h2 id="boundary-title">~ Two decisions, not one</h2>
+            <p>One important distinction was between permission to collect data at the organization level and the choice to include that data in an individual model. I wanted the language and controls to keep those scopes separate.</p>
+
+            <figure class="concept">
+              <figcaption class="label" id="concept-title">Concept illustration — not product UI</figcaption>
+              <p id="concept-help">Try either choice. Each changes only its own scope.</p>
+              <fieldset aria-describedby="concept-help concept-limit">
+                <legend class="visually-hidden">Two independent data decisions</legend>
+                <div class="decision collection">
+                  <p class="label">Organization / collection permission</p>
+                  <input type="checkbox" id="collection" aria-describedby="collection-states">
+                  <label for="collection">Allow organization data collection</label>
+                  <div class="state-pair" id="collection-states">
+                    <p class="state state-off"><span>Off: no collection permission.</span></p>
+                    <p class="state state-on"><span>On: collection permitted.</span></p>
+                  </div>
+                </div>
+                <div class="decision inclusion">
+                  <p class="label">Individual model / inclusion choice</p>
+                  <input type="checkbox" id="inclusion" aria-describedby="inclusion-states" checked>
+                  <label for="inclusion">Include collected data in this model</label>
+                  <div class="state-pair" id="inclusion-states">
+                    <p class="state state-off"><span>Off: leave data out.</span></p>
+                    <p class="state state-on"><span>On: include data in this model.</span></p>
+                  </div>
+                </div>
+              </fieldset>
+              <p class="figure-note" id="concept-limit">These are independent choices, not a simulation of data availability. Nothing here collects data or trains a model.</p>
+            </figure>
+          </section>
+
+          <section aria-labelledby="delivered-title">
+            <h2 id="delivered-title">~ Delivered beta refinements</h2>
+            <p>In June 2024, I delivered UI polish for the limited beta. My design work considered how to communicate training expectations without a reliable duration estimate, and how language-selection tokens could stay consistent with Primer. The aim was to explain what the system knew without promising what it could not.</p>
+          </section>
+
+          <section aria-labelledby="explored-title">
+            <h2 id="explored-title">~ Explored directions</h2>
+            <p>I also explored repository guidance, templates, and guided onboarding to help teams decide where to begin. Those directions addressed the need for training guidance; they are not presented here as shipped features. Monitoring and adjustment remained part of the broader design intent.</p>
+          </section>
+
+          <footer class="scope-note">
+            <h2>~ In perspective</h2>
+            <p>The preview was later retired before general availability. The beta refinements and the later explorations represent two different parts of the work: making the current experience clearer and investigating where it could go next.</p>
+          </footer>
+        </article>
+
+        <aside class="margin" aria-label="Project context">
+          <p class="label">2024 / GitHub</p>
+          <p>Lead product designer</p>
+          <p class="margin-note">Beta refinements<br>and explored directions</p>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>

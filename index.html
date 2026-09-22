@@ -41,6 +41,7 @@ button:hover { background: var(--ink); color: #fff; }
 }
 .r32 { aspect-ratio: 3 / 2; } .r43 { aspect-ratio: 4 / 3; } .r11 { aspect-ratio: 1 / 1; } .r219 { aspect-ratio: 21 / 9; } .r34 { aspect-ratio: 3 / 4; }
 figure { margin: 0; }
+figure > img { display: block; width: 100%; height: auto; }
 figcaption { font-family: "Arial Narrow", Arial, sans-serif; font-size: 11px; text-transform: uppercase; color: var(--dim); margin-top: 0.4em; letter-spacing: 0.03em; }
 
 /* ---------- body ---------- */
@@ -57,6 +58,8 @@ main > p { margin: 0 0 1.5rem; }
 .board .ax.y { display: flex; align-items: center; }
 .board .cell { display: flex; flex-wrap: wrap; gap: 0.35em; align-content: flex-start; }
 .board .cell a { display: block; width: 2.6em; }
+.board .cell img { display: block; width: 100%; height: auto; object-fit: contain; border: 1px solid #ccc; box-sizing: border-box; }
+.board .cell a:is(:hover, :focus-visible) img { outline: 2px solid var(--mark); }
 .board .cell .ph { border-color: #ccc; }
 .board .cell .ph::after { content: none; }
 .board .cell a:hover .ph { outline: 2px solid var(--mark); }
@@ -115,7 +118,7 @@ main > p { margin: 0 0 1.5rem; }
   <h2>State of things</h2>
   <div class="board" aria-label="Works by kind and state">
     <div class="ax"></div><div class="ax">Idea</div><div class="ax">Making</div><div class="ax">Shipped</div><div class="ax">Resting</div>
-    <div class="ax y">Product</div><div class="cell"><a href="#" title="untitled idea"><span class="ph r11 idea"></span></a><a href="#" title="untitled idea"><span class="ph r11 idea"></span></a></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="ax y">Product</div><div class="cell"><a href="#" title="untitled idea"><span class="ph r11 idea"></span></a><a href="#" title="untitled idea"><span class="ph r11 idea"></span></a></div><div class="cell"></div><div class="cell"></div><div class="cell"><a href="#copilot-custom-models" title="Copilot custom models"><img class="r11" src="assets/plates/copilot-custom-models-v2/configuration.png" alt="Copilot custom models" loading="lazy"></a></div>
     <div class="ax y">Tool</div><div class="cell"><a href="#" title="untitled idea"><span class="ph r11 idea"></span></a></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
     <div class="ax y">Text</div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
     <div class="ax y">Site</div><div class="cell"></div><div class="cell"><a href="#this-website" title="Digital Expanse"><span class="ph r11 r11" data-label=""></span></a></div><div class="cell"></div><div class="cell"></div>
@@ -123,29 +126,40 @@ main > p { margin: 0 0 1.5rem; }
   <p class="legend">Things move to the right over time. Dashed squares are ideas without a picture yet. Nothing is deleted; finished things come to rest.</p>
 
   <h2>Works</h2>
+  <div class="entry" id="copilot-custom-models">
+    <figure>
+      <img class="" src="assets/plates/copilot-custom-models-v2/configuration.png" alt="2024, custom model configuration. Beta design, cropped." loading="lazy">
+      <figcaption>2024, custom model configuration. Beta design, cropped.</figcaption>
+    </figure>
+    <div>
+      <p><b><a href="projects/copilot-custom-models/v2/index.html">Copilot custom models</a></b>. Helping enterprise admins choose training data and configure a custom model without becoming training experts. I led design from limited-beta refinements to explorations for a more guided setup. A working account of the whole flow and the smaller decisions within it.</p>
+      <div class="frames"><a href="projects/copilot-custom-models/v1/index.html" title="version 1">v1</a><a href="projects/copilot-custom-models/v2/index.html" title="version 2">v2</a></div>
+    </div>
+  </div>
+
   <div class="entry" id="this-website">
     <figure>
-      <span class="ph r43 " data-label="Plate I"></span>
+      <span class="ph r43 " data-label="Plate II"></span>
       <figcaption>2026 Sept, this index, v1</figcaption>
     </figure>
     <div>
-      <p><b><a href="projects/this-website/v1/">Digital Expanse</a></b>. This site, an index of works, always in progress. It began as a table on ruled paper, then a chart, then a manuscript. Now it is a manuscript with plates: the pictures do the first telling and the text does the second.</p>
-      <div class="frames"><a href="projects/this-website/v1/" title="version 1">v1</a></div>
+      <p><b><a href="projects/this-website/v1/index.html">Digital Expanse</a></b>. This site, an index of works, always in progress. It began as a table on ruled paper, then a chart, then a manuscript. Now it is a manuscript with plates: the pictures do the first telling and the text does the second.</p>
+      <div class="frames"><a href="projects/this-website/v1/index.html" title="version 1">v1</a></div>
     </div>
   </div>
 
   <h2>Loose plates</h2>
   <p>Pictures that don’t belong to a work yet: sketches, screenshots, things seen. Some will become entries above. Some will stay here.</p>
   <div class="sheet">
-    <figure><span class="ph r32 " data-label="Plate II"></span><figcaption>2026 Sept, sketch</figcaption></figure>
-    <figure><span class="ph r34 " data-label="Plate III"></span><figcaption>2026 Sept, screenshot</figcaption></figure>
-    <figure><span class="ph r11 " data-label="Plate IV"></span><figcaption>2026 Sept, seen in ______</figcaption></figure>
-    <figure><span class="ph r43 " data-label="Plate V"></span><figcaption>2026 Sept, detail</figcaption></figure>
-    <figure><span class="ph r32 " data-label="Plate VI"></span><figcaption>2026 Sept, notebook</figcaption></figure>
-    <figure><span class="ph r11 " data-label="Plate VII"></span><figcaption>2026 Sept, ______</figcaption></figure>
+    <figure><span class="ph r32 " data-label="Plate III"></span><figcaption>2026 Sept, sketch</figcaption></figure>
+    <figure><span class="ph r34 " data-label="Plate IV"></span><figcaption>2026 Sept, screenshot</figcaption></figure>
+    <figure><span class="ph r11 " data-label="Plate V"></span><figcaption>2026 Sept, seen in ______</figcaption></figure>
+    <figure><span class="ph r43 " data-label="Plate VI"></span><figcaption>2026 Sept, detail</figcaption></figure>
+    <figure><span class="ph r32 " data-label="Plate VII"></span><figcaption>2026 Sept, notebook</figcaption></figure>
+    <figure><span class="ph r11 " data-label="Plate VIII"></span><figcaption>2026 Sept, ______</figcaption></figure>
   </div>
 
-  <p class="foot">Last updated <span class="stamp">2026-09-21</span>. A serif for the telling, a condensed sans for the margins, pure blue for links, grey hatching where a picture will go. See the <a href="colophon.html">colophon</a>.</p>
+  <p class="foot">Last updated <span class="stamp">2026-09-22</span>. A serif for the telling, a condensed sans for the margins, pure blue for links, grey hatching where a picture will go. See the <a href="colophon.html">colophon</a>.</p>
 </main>
 
 </div>

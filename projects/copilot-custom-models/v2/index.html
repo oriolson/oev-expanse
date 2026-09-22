@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ori Olson's design work on Copilot custom models: choosing training data, setting expectations, and exploring guided starting points.">
+  <title>Copilot custom models, v2 — Ori Olson</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="manuscript">
+  <p class="back"><a href="../../../index.html#copilot-custom-models">Back to Digital Expanse</a></p>
+
+  <article aria-labelledby="project-title">
+    <header class="project-header">
+      <div class="context">
+        <p class="label">2024 / GitHub</p>
+        <p>Lead product designer</p>
+        <p>With product management,<br> engineering, and design peers</p>
+        <p class="label"><mark>Working draft / v2</mark></p>
+      </div>
+      <div>
+        <h1 id="project-title">Copilot custom models</h1>
+        <p class="opening">Helping enterprise admins choose what a model learns from, without becoming training experts.</p>
+        <p>I led design end to end, from limited-beta UI refinements to explorations for a more guided setup.</p>
+      </div>
+    </header>
+
+    <figure class="plate hero">
+      <a class="image-link" href="../../../assets/plates/copilot-custom-models-v2/configuration.png" aria-label="Open the beta configuration design at full size">
+        <img src="../../../assets/plates/copilot-custom-models-v2/configuration.png" width="1008" height="665" fetchpriority="high" alt="Beta configuration design with repository selection, file-extension filters, a prompts-and-suggestions inclusion control, training guidance, and the create-model action.">
+      </a>
+      <figcaption>
+        <span class="label">01 / Beta design / 2024</span>
+        <span>Choosing what a custom model learns from. Cropped from the design file; original review markers and draft copy retained. <a href="../../../assets/plates/copilot-custom-models-v2/configuration.png">Open full size</a>.</span>
+      </figcaption>
+    </figure>
+
+    <section class="prose" aria-labelledby="work-title">
+      <h2 id="work-title">~ The whole experience</h2>
+      <p>The difficult questions extended beyond starting training: which data to use, which controls were available, and how teams could monitor and adjust a model once developers began using it.</p>
+      <p>The configuration design brings those first decisions together. Admins could select repositories, narrow the files included, and choose whether to include collected prompts and suggestions before starting training.</p>
+      <p>In June 2024, I delivered UI polish for the limited beta. The frames here are design artifacts, not production captures.</p>
+    </section>
+
+    <section class="prose" aria-labelledby="detail-title">
+      <h2 id="detail-title">~ Explaining the wait</h2>
+      <p>We did not have a reliable completion estimate. Instead of offering false precision, the design explained what affected training time and how people would know it was finished.</p>
+    </section>
+
+    <figure class="plate detail">
+      <a class="image-link" href="../../../assets/plates/copilot-custom-models-v2/training-expectations.png" aria-label="Open the original training-expectations banner at full size">
+        <img src="../../../assets/plates/copilot-custom-models-v2/training-expectations.png" width="964" height="69" loading="lazy" alt="Information banner: training time depends on the amount of data, large data sets can take a couple of days, and an email will notify the user when training is complete.">
+      </a>
+      <figcaption>
+        <span class="label">02 / Detail / Training expectations</span>
+        <span>Original design copy, including the email placeholder. This shows the intended communication, not a measured training duration. <a href="../../../assets/plates/copilot-custom-models-v2/training-expectations.png">Open full size</a>.</span>
+      </figcaption>
+      <details class="transcript">
+        <summary>Read the banner copy</summary>
+        <blockquote>Training time is based on the amount of data selected and can take a couple of days for large data sets. We’ll notify you at {your@email.com} when training is complete.</blockquote>
+      </details>
+    </figure>
+
+    <section class="prose" aria-labelledby="scope-title">
+      <h2 id="scope-title">~ Two decisions, not one</h2>
+      <p>Another important distinction was between permission to collect data at the organization level and the choice to include that data in an individual model. The inclusion control in the configuration screen addresses the second decision; it does not replace the organization policy.</p>
+      <p>Keeping those scopes separate mattered as much as the control itself. So did smaller details, like making the file-extension tokens consistent with Primer.</p>
+    </section>
+
+    <section class="prose" aria-labelledby="exploration-title">
+      <h2 id="exploration-title">~ A starting point, not a blank slate</h2>
+      <p>I explored suggested models as a way to help admins begin with a broad or more focused data set, then review it before training. Templates, repository guidance, and guided onboarding were later directions, not confirmed shipped features.</p>
+    </section>
+
+    <figure class="plate exploration">
+      <p class="label">Suggested starting points</p>
+      <div class="template-options">
+        <a class="image-link" href="../../../assets/plates/copilot-custom-models-v2/template-general.png" aria-label="Open the general-purpose model exploration at full size">
+          <img src="../../../assets/plates/copilot-custom-models-v2/template-general.png" width="410" height="164" loading="lazy" alt="General Purpose Model suggestion: include suggested repositories for shared practices across projects, with a Review action.">
+        </a>
+        <a class="image-link" href="../../../assets/plates/copilot-custom-models-v2/template-focused.png" aria-label="Open the web-development model exploration at full size">
+          <img src="../../../assets/plates/copilot-custom-models-v2/template-focused.png" width="410" height="164" loading="lazy" alt="Web Development Model suggestion: use a separate model for a particular context or division, with a Review action.">
+        </a>
+      </div>
+      <figcaption>
+        <span class="label">03 / Exploration / Not confirmed shipped</span>
+        <span>A broad or focused starting point, reviewed before training. Two crops from the template exploration; data sizes and repository counts are illustrative.</span>
+      </figcaption>
+    </figure>
+
+    <footer class="prose closing">
+      <h2>~ In perspective</h2>
+      <p>The preview was later retired before general availability. The beta refinements and the later explorations represent two parts of the work: making the current experience clearer and investigating where it could go next.</p>
+      <p class="versions"><a href="../v1/index.html">Earlier telling: v1</a> · <a href="../../../index.html#copilot-custom-models">Back to Works</a></p>
+    </footer>
+  </article>
+</main>
+</body>
+</html>

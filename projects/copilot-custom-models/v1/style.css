@@ -1,0 +1,315 @@
+:root {
+  color-scheme: light;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #000;
+  background: #fff;
+  --label-font: "Arial Narrow", "Helvetica Neue Condensed", "Liberation Sans Narrow", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.manuscript {
+  max-width: 46em;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 5rem;
+}
+
+a,
+a:visited {
+  color: #0000ff;
+}
+
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid #0000ff;
+  outline-offset: 4px;
+}
+
+.page-header {
+  margin-bottom: 4.5rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 13em minmax(0, 1fr);
+  column-gap: 2.5rem;
+  align-items: start;
+}
+
+article {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.margin {
+  grid-column: 1;
+  grid-row: 1;
+  position: sticky;
+  top: 2rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+h1,
+h2 {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+h2,
+.label {
+  font-family: var(--label-font);
+  font-stretch: condensed;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.label {
+  font-size: 0.72rem;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+mark {
+  color: #000;
+  background: #ffff00;
+}
+
+.draft {
+  margin-bottom: 1rem;
+}
+
+.opening {
+  max-width: 25em;
+  margin-bottom: 0;
+}
+
+.project-header {
+  margin-bottom: 3.5rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+.margin .label {
+  margin-bottom: 1rem;
+}
+
+.margin-note {
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+figure {
+  margin: 0;
+}
+
+.journey {
+  margin: 2.5rem 0 4rem;
+}
+
+.journey-steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 0;
+  margin: 1.25rem 0 1rem;
+}
+
+.journey-steps li {
+  border-top: 1px solid #000;
+  padding: 0.65rem 0.4rem 0 0;
+  min-width: 0;
+}
+
+.journey-steps li + li {
+  padding-left: 0.6rem;
+  border-left: 1px solid #000;
+}
+
+.journey-steps span {
+  display: block;
+  font-size: 0.89rem;
+}
+
+.journey-steps small {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.figure-note {
+  font-size: 0.83rem;
+  margin: 1.25rem 0 0;
+}
+
+.concept {
+  margin-top: 2rem;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 1rem 0 1.25rem;
+}
+
+.concept figcaption {
+  margin-bottom: 0.75rem;
+}
+
+.concept > p:not(.figure-note) {
+  font-style: italic;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.decision {
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr);
+  align-items: start;
+  column-gap: 0.35rem;
+  margin-top: 1.5rem;
+  --highlight: #ffff00;
+}
+
+.decision.inclusion {
+  --highlight: #00ff00;
+  margin-top: 2rem;
+}
+
+.decision > .label {
+  grid-column: 1 / -1;
+  margin-bottom: 0.35rem;
+}
+
+.decision input {
+  margin: 0.87rem 0 0;
+  justify-self: start;
+}
+
+.decision label {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.state-pair {
+  grid-column: 2;
+  margin-top: 0.35rem;
+  font-size: 0.83rem;
+}
+
+.state {
+  margin: 0 0 0.3rem;
+  opacity: 0.62;
+  transform: translateX(0);
+  transition: opacity 220ms ease-out, transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.decision input:not(:checked) ~ .state-pair .state-off,
+.decision input:checked ~ .state-pair .state-on {
+  opacity: 1;
+  transform: translateX(0.3rem);
+}
+
+.decision input:not(:checked) ~ .state-pair .state-off span,
+.decision input:checked ~ .state-pair .state-on span {
+  background: var(--highlight);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.scope-note {
+  margin-top: 4rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 700px) {
+  .manuscript {
+    max-width: 32em;
+    padding: 1.5rem 1.1rem 3rem;
+  }
+
+  .page-header {
+    margin-bottom: 3rem;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  article,
+  .margin {
+    width: 100%;
+  }
+
+  .margin {
+    position: static;
+    border-top: 1px solid #000;
+    padding-top: 1rem;
+  }
+
+  .margin-note {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .journey-steps {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    border-left: 1px solid #000;
+    margin-left: 0.2rem;
+  }
+
+  .journey-steps li,
+  .journey-steps li + li {
+    border: 0;
+    padding: 0 0 0 1rem;
+  }
+
+  .journey-steps small {
+    margin-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .state {
+    transition: none;
+    transform: none !important;
+  }
+}

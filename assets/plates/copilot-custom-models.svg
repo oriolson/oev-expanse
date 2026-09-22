@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="360" viewBox="0 0 480 360" role="img" aria-labelledby="title description">
+  <title id="title">Copilot custom models: a conceptual workflow</title>
+  <desc id="description">Four decisions across the model lifecycle: choose data, configure, train, and observe. An editorial concept map, not a screenshot of the product.</desc>
+  <rect width="480" height="360" fill="#fff"/>
+  <g fill="none" stroke="#111">
+    <path d="M24 24h432M24 318h432"/>
+    <path d="M57 81v190" stroke="#aaa"/>
+  </g>
+  <g font-family="Arial Narrow, Arial, sans-serif" font-size="13" fill="#555">
+    <text x="24" y="47">CUSTOM MODELS / FOUR DECISIONS</text>
+    <text x="24" y="341">CONCEPT MAP, NOT PRODUCT UI</text>
+  </g>
+  <g font-family="Arial Narrow, Arial, sans-serif" font-size="16" fill="#111">
+    <rect x="37" y="67" width="40" height="29" fill="#ffff00"/>
+    <text x="47" y="87">01</text>
+    <rect x="37" y="129" width="40" height="29" fill="#fff"/>
+    <text x="47" y="149">02</text>
+    <rect x="37" y="191" width="40" height="29" fill="#fff"/>
+    <text x="47" y="211">03</text>
+    <rect x="37" y="253" width="40" height="29" fill="#fff"/>
+    <text x="47" y="273">04</text>
+  </g>
+  <g font-family="Times New Roman, Times, serif" font-size="30" fill="#111">
+    <text x="104" y="91">Choose data</text>
+    <text x="104" y="153">Configure</text>
+    <text x="104" y="215">Train</text>
+    <text x="104" y="277">Observe</text>
+  </g>
+</svg>

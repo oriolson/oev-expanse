@@ -62,8 +62,8 @@ for (const w of site.works) {
 let plateNo = 0;
 const works = site.works.map((w) => {
   plateNo += 1;
-  const frames = (w.versions || []).map((v) => `<a href="projects/${esc(w.slug)}/${esc(v)}/" title="version ${esc(v.replace(/^v/, ""))}">${esc(v)}</a>`).join("");
-  const latest = `projects/${esc(w.slug)}/${esc((w.versions || ["v1"]).at(-1))}/`;
+  const frames = (w.versions || []).map((v) => `<a href="projects/${esc(w.slug)}/${esc(v)}/index.html" title="version ${esc(v.replace(/^v/, ""))}">${esc(v)}</a>`).join("");
+  const latest = `projects/${esc(w.slug)}/${esc((w.versions || ["v1"]).at(-1))}/index.html`;
   return `  <div class="entry" id="${esc(w.slug)}">
     <figure>
       ${picture(w.image, w.caption, "4:3", `Plate ${roman(plateNo)}`)}
