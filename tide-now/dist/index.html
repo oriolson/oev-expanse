@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tide Now</title>
+  <meta name="description" content="A small private tide checker for Brooklyn, the East River, and other coastal stations.">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="topline">
+      <h1>Tide Now</h1>
+      <time id="clock" datetime="">--:--</time>
+    </header>
+
+    <section class="station-panel" aria-labelledby="station-label">
+      <label id="station-label" for="station">Station</label>
+      <select id="station" name="station"></select>
+      <label id="date-label" for="date">Date</label>
+      <input id="date" name="date" type="date">
+      <button id="refresh" type="button" aria-label="Refresh tide data">Refresh</button>
+    </section>
+
+    <section class="now-card" aria-live="polite">
+      <p id="hero-label" class="kicker">Now</p>
+      <div class="tide-line">
+        <span id="height">--</span>
+        <span id="trend" class="trend">Waiting</span>
+      </div>
+      <p id="place" class="place">Choose a station</p>
+    </section>
+
+    <section class="grid" aria-label="Upcoming tides">
+      <article>
+        <p class="kicker">Low</p>
+        <p id="low-time" class="time">--</p>
+        <p id="low-height" class="height">--</p>
+      </article>
+      <article>
+        <p class="kicker">High</p>
+        <p id="high-time" class="time">--</p>
+        <p id="high-height" class="height">--</p>
+      </article>
+    </section>
+
+    <section class="best-panel" aria-live="polite">
+      <p class="kicker">Best</p>
+      <p id="best-time" class="best-time">🐟 --</p>
+      <p id="best-note" class="height">Strongest predicted movement</p>
+      <p id="incoming-time" class="incoming-time">↑ High --</p>
+    </section>
+
+    <section class="chart-panel" aria-label="Tide curve">
+      <div class="range-meta">
+        <span id="range-low">Low --</span>
+        <span id="range-high">High --</span>
+      </div>
+      <svg class="tide-chart" viewBox="0 0 100 60" preserveAspectRatio="none" role="img" aria-label="Predicted tide curve for selected day">
+        <line class="chart-grid" x1="0" y1="8" x2="100" y2="8"></line>
+        <line class="chart-grid" x1="0" y1="52" x2="100" y2="52"></line>
+        <rect id="incoming-band" class="incoming-band" x="0" y="8" width="0" height="44"></rect>
+        <path id="chart-path" class="chart-path" d=""></path>
+        <g id="chart-dots"></g>
+        <text id="fish-marker" class="fish-marker" x="0" y="30">🐟</text>
+        <line id="chart-marker-line" class="chart-marker-line" x1="0" y1="4" x2="0" y2="56"></line>
+        <circle id="chart-marker-dot" class="chart-marker-dot" cx="0" cy="30" r="2"></circle>
+      </svg>
+      <div class="chart-axis">
+        <span>00</span>
+        <span>06</span>
+        <span>12</span>
+        <span>18</span>
+        <span>24</span>
+      </div>
+    </section>
+
+    <section class="scrubber-panel" aria-labelledby="scrub-label">
+      <div class="scrub-head">
+        <label id="scrub-label" for="scrubber">Time</label>
+        <output id="scrub-time" for="scrubber">--</output>
+      </div>
+      <input id="scrubber" type="range" min="0" max="0" step="1" value="0" disabled>
+      <div class="scrub-value">
+        <span id="scrub-height">--</span>
+        <span id="scrub-trend" class="trend">Waiting</span>
+      </div>
+    </section>
+
+    <section class="table-panel" aria-labelledby="table-title">
+      <h2 id="table-title">Tide Times</h2>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Time</th>
+            <th scope="col">Tide</th>
+            <th scope="col">Height</th>
+            <th scope="col">Weather</th>
+          </tr>
+        </thead>
+        <tbody id="tide-table">
+          <tr>
+            <td colspan="4">Loading</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <p id="status" class="status" role="status">NOAA predictions load when a station is selected.</p>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
