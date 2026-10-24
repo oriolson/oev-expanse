@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 420" fill="none">
+  <defs>
+    <pattern id="dots" width="5" height="5" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#171717"/>
+    </pattern>
+  </defs>
+  <g transform="rotate(-13 180 210)">
+    <circle cx="183" cy="63" r="43" stroke="#171717" stroke-width="6"/>
+    <circle cx="182" cy="64" r="35" stroke="#171717"/>
+    <path d="m181 104 2 39" stroke="#171717" stroke-width="9" stroke-linecap="round"/>
+    <path d="M97 129 260 130Q274 131 273 146L271 359Q270 374 256 374L98 372Q83 371 84 358L85 146Q85 130 97 129Z" fill="#f7f7f2" stroke="#171717" stroke-width="3"/>
+    <path d="m97 144 162-1-1 217-162-2z" stroke="#171717"/>
+    <circle cx="182" cy="146" r="6" fill="#f7f7f2" stroke="#171717" stroke-width="2"/>
+    <path d="m104 164 144 2-2 173-143-1z" fill="#171717"/>
+    <path d="m111 171 130 2-1 70-130-1z" fill="#f7f7f2"/>
+    <path d="m111 171 130 2-1 70-130-1z" fill="url(#dots)"/>
+    <text x="175" y="278" text-anchor="middle" fill="#f7f7f2" font-family="Arial,Helvetica,sans-serif" font-weight="900" font-size="24" letter-spacing="-1">YOUR PHOTO</text>
+    <text x="175" y="308" text-anchor="middle" fill="#f7f7f2" font-family="Arial,Helvetica,sans-serif" font-weight="900" font-size="24">HERE</text>
+    <path d="M218 60q87 12 73 103" stroke="#171717" stroke-width="2"/>
+    <path d="m290 158 9 21 24 2-18 16 5 24-21-12-21 10 5-23-18-17 25-1z" fill="url(#dots)" stroke="#171717" stroke-width="3"/>
+  </g>
+  <path d="m50 83-16-8m23-3-5-19M295 323l19 5m-26 3 10 14" stroke="#171717" stroke-width="3"/>
+</svg>

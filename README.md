@@ -11,3 +11,4 @@ This is all agent coded and should be optimized for human and agent friendly con
 - `personal-site/` — Ori's personal website. Plain HTML, generated from `site.json`. Rules in `personal-site/AGENTS.md`. Deploys to GitHub Pages on push.
 - `pier-journal/` — native app plan and interactive wireframes.
 - `tide-now/` — private mobile-first tide and fishing-time checker. Static Sites project.
+- `keychain-popup/` — Little Proof photo keychain pop-up. Static design and copy preview; not published.
