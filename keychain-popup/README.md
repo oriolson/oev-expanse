@@ -8,6 +8,18 @@ Concept 03 is a simpler one-sheet zine: a black masthead, monochrome halftone
 illustration, short copy, and one blue inquiry link. No navigation or cards.
 Design references and their scope are documented in `copy.md`.
 
+## Paid pilot drafts
+
+- [Pilot brief](pilot-brief.md): one venue trial, draft price, and host questions.
+- [Outreach](outreach.md): an unsent Instagram DM and email.
+- [Event checklist](event-checklist.md): a reusable phone-friendly run sheet.
+
+Materials are purchased and the product is tested. These drafts replace the
+earlier broad business plan; prices and host terms still need approval.
+This repository is public. Keep actual contact details, costs, availability,
+and event records in private copies outside the repository, not in these files.
+Real sample photos are pending approval; outreach does not need to wait for them.
+
 ## Preview locally
 
 From the repository root:
